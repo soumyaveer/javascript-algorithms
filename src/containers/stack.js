@@ -11,4 +11,9 @@ function Stack(){
     return items.pop();
   };
 
+  // returns top element from the stack
+  this.peek = function(){
+    return items[items.length - 1];
+  };
+
 }
