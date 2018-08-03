@@ -27,3 +27,9 @@ test('peek returns the top element from the stack', () => {
 
   expect(stack.peek()).toBe(2);
 });
+
+test('isEmpty returns true if stack has no elements', () =>{
+  let stack = new Stack();
+
+  expect(stack.isEmpty()).toBe(true)
+});
