@@ -33,3 +33,12 @@ test('isEmpty returns true if stack has no elements', () =>{
 
   expect(stack.isEmpty()).toBe(true)
 });
+
+test('isEmpty returns false if stack has elements', () => {
+  let stack = new Stack();
+
+  stack.push(1);
+  stack.push(2);
+
+  expect(stack.isEmpty()).toBe(false)
+});
