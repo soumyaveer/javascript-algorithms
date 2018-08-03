@@ -1,38 +1,40 @@
-function Stack(){
-  let items = [];
+class Stack {
+  constructor(){
+     this.items = [];
+  }
 
   //adds new item at the top of the stack
-  this.push = function(element){
-    items.push(element)
+  push(element){
+    this.items.push(element)
   };
 
   //removes element from the top of the stack
-  this.pop = function(){
-    return items.pop();
+  pop(){
+    return this.items.pop();
   };
 
   // returns top element from the stack
-  this.peek = function(){
-    return items[items.length - 1];
+  peek(){
+    return this.items[this.items.length - 1];
   };
 
   // returns true if stack does not contain any elements
-  this.isEmpty = function(){
-    return items.length === 0;
+  isEmpty(){
+    return this.items.length === 0;
   };
 
   // removes all elements from the stack
-  this.clear = function(){
-    items = [];
+  clear(){
+    this.items = [];
   };
 
   // returns the number of elements that stack contains
-  this.size = function(){
-    return items.length;
+  size(){
+    return this.items.length;
   };
 
   // prints the items in the stack
-  this.print = function(){
-    console.log(items.toString());
+  print(){
+    console.log(this.items.toString());
   };
 }
