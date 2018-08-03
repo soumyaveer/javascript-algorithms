@@ -20,4 +20,9 @@ function Stack(){
   this.isEmpty = function(){
     return items.length === 0;
   };
+
+  // removes all elements from the stack
+  this.clear = function(){
+    items = [];
+  };
 }
