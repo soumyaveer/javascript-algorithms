@@ -10,5 +10,5 @@ function Stack(){
   this.pop = function(){
     return items.pop();
   };
-  
+
 }
