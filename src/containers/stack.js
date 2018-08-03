@@ -25,4 +25,10 @@ function Stack(){
   this.clear = function(){
     items = [];
   };
+
+  // returns the number of elements that stack contains
+  this.size = function(){
+    return items.length;
+  }
+  
 }
