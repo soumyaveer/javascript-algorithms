@@ -55,3 +55,16 @@ test('clear removes all elements from the stach', () => {
 
   expect(stack.isEmpty()).toBe(true);
 });
+
+test('size returns number of elements in the stack', () => {
+  let stack = new Stack();
+
+  stack.push(1);
+  stack.push(2);
+
+  expect(stack.size()).toBe(2);
+
+  stack.push(3);
+
+  expect(stack.size()).toBe(3);
+});
