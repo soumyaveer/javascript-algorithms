@@ -29,10 +29,10 @@ function Stack(){
   // returns the number of elements that stack contains
   this.size = function(){
     return items.length;
-  }
+  };
 
   // prints the items in the stack
   this.print = function(){
     console.log(items.toString());
-  }
+  };
 }
