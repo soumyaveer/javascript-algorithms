@@ -16,4 +16,8 @@ function Stack(){
     return items[items.length - 1];
   };
 
+  // returns true if stack does not contain any elements
+  this.isEmpty = function(){
+    return items.length === 0;
+  };
 }
