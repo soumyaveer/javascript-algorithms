@@ -38,3 +38,5 @@ class Stack {
     console.log(this.items.toString());
   };
 }
+
+module.exports = Stack;
