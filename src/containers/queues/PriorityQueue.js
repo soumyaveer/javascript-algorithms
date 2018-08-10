@@ -1,6 +1,5 @@
 const Queue = require('./Queue');
 
-
 class PriorityQueue extends Queue {
 
   enqueue(element, priority){
@@ -20,4 +19,5 @@ class PriorityQueue extends Queue {
     }
   };
 }
+
 module.exports = PriorityQueue;

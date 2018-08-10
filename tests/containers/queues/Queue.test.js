@@ -7,7 +7,6 @@ test('enqueue adds a new item at the back of the queue', () => {
   expect(queue.front()).toBe(1);
 });
 
-
 test('dequeue removes first item from the queue', () =>{
   let queue = new Queue();
 
