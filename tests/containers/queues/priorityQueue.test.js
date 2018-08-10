@@ -45,3 +45,18 @@ test('front returns the first element from the queue', () => {
   expect(priorityQueue.front()).toEqual({"element": "Jack", "priority": 1});
 });
 
+test('isEmpty returns true if queue has no elements', () => {
+  let priorityQueue = new PriorityQueue();
+
+  expect(priorityQueue.isEmpty()).toBe(true)
+});
+
+test('isEmpty returns false if queue has elements', () => {
+  let priorityQueue = new PriorityQueue();
+
+  priorityQueue.enqueue("John", 2);
+  priorityQueue.enqueue("Jack", 1);
+
+  expect(priorityQueue.isEmpty()).toBe(false);
+});
+
