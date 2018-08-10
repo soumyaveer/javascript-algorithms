@@ -1,4 +1,4 @@
-const Queue = require('../../src/containers/queue');
+const Queue = require('../../../src/containers/queues/queue');
 
 test('enqueue adds a new item at the back of the queue', () => {
   let queue = new Queue();
