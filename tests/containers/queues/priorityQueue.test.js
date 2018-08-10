@@ -60,3 +60,15 @@ test('isEmpty returns false if queue has elements', () => {
   expect(priorityQueue.isEmpty()).toBe(false);
 });
 
+test('size returns number of elements in the queue', () => {
+  let priorityQueue = new PriorityQueue();
+
+  priorityQueue.enqueue("John", 2);
+  priorityQueue.enqueue("Jack", 1);
+
+  expect(priorityQueue.size()).toBe(2);
+
+  priorityQueue.enqueue("Camillia", 1);
+
+  expect(priorityQueue.size()).toBe(3);
+});
