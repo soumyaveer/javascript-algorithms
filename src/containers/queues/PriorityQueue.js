@@ -17,7 +17,7 @@ class PriorityQueue extends Queue {
     if (!added){
       this.items.push(queueElement);
     }
-  };
+  }
 }
 
 module.exports = PriorityQueue;
