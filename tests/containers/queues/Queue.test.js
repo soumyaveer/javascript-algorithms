@@ -30,7 +30,7 @@ test('front returns the first element from the queue', () => {
 test('isEmpty returns true if queue has no elements', () => {
   let queue = new Queue();
 
-  expect(queue.isEmpty()).toBe(true)
+  expect(queue.isEmpty()).toBe(true);
 });
 
 test('isEmpty returns false if queue has elements', () => {

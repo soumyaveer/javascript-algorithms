@@ -9,7 +9,7 @@ test('QueueElement creates queue element and priority', () => {
 
   expect(priorityQueue.isEmpty()).toBe(false);
 
-  expect(priorityQueue.front()).toEqual({"element": "Jack", "priority": 1})
+  expect(priorityQueue.front()).toEqual({"element": "Jack", "priority": 1});
 });
 
 test('clear removes all elements from the queue', () => {
@@ -48,7 +48,7 @@ test('front returns the first element from the queue', () => {
 test('isEmpty returns true if queue has no elements', () => {
   let priorityQueue = new PriorityQueue();
 
-  expect(priorityQueue.isEmpty()).toBe(true)
+  expect(priorityQueue.isEmpty()).toBe(true);
 });
 
 test('isEmpty returns false if queue has elements', () => {
