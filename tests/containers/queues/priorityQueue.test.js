@@ -7,7 +7,6 @@ test('QueueElement creates queue element and priority', () => {
   priorityQueue.enqueue("Jack", 1);
   priorityQueue.enqueue("Camilia", 1);
 
-
   expect(priorityQueue.isEmpty()).toBe(false);
 
   expect(priorityQueue.front().element).toBe("Jack")
@@ -24,5 +23,16 @@ test('clear removes all elements from the queue', () => {
   priorityQueue.clear();
 
   expect(priorityQueue.isEmpty()).toBe(true);
+});
+
+test('dequeue removes first item from the queue', () =>{
+  let priorityQueue = new PriorityQueue();
+
+  priorityQueue.enqueue("John", 2);
+  priorityQueue.enqueue("Jack", 1);
+
+  expect(priorityQueue.size()).toBe(2);
+  expect(priorityQueue.dequeue().element).toBe("Jack");
+  expect(priorityQueue.size()).toBe(1);
 });
 
