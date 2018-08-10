@@ -23,6 +23,10 @@ class Queue {
     return this.items.length;
   }
 
+  //returns true is queue has no elements otherwise false
+  isEmpty(){
+    return this.items.length === 0;
+  }
 }
 
 module.exports = Queue;

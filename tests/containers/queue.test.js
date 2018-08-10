@@ -37,8 +37,8 @@ test('isEmpty returns true if queue has no elements', () => {
 test('isEmpty returns false if queue has elements', () => {
   let queue = new Queue();
 
-  queue.push(1);
-  queue.push(2);
+  queue.enqueue(1);
+  queue.enqueue(2);
 
   expect(queue.isEmpty()).toBe(false);
 });
@@ -46,8 +46,8 @@ test('isEmpty returns false if queue has elements', () => {
 test('clear removes all elements from the queue', () => {
   let queue = new Queue();
 
-  queue.push(1);
-  queue.push(2);
+  queue.enqueue(1);
+  queue.enqueue(2);
 
   expect(queue.isEmpty()).toBe(false);
 
