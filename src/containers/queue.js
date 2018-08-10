@@ -8,8 +8,19 @@ class Queue {
     this.items.push(element)
   }
 
+  // returns first element of the queue
   front(){
     return this.items[0]
+  }
+
+  //removes first element from the queue
+  dequeue(){
+    return this.items.shift()
+  }
+
+  //returns the number of elements in the queue
+  size(){
+    return this.items.length;
   }
 
 }
