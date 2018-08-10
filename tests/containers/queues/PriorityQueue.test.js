@@ -1,4 +1,4 @@
-const PriorityQueue = require('../../../src/containers/queues/priorityQueue');
+const PriorityQueue = require('../../../src/containers/queues/PriorityQueue');
 
 test('QueueElement creates queue element and priority', () => {
   let priorityQueue = new PriorityQueue();

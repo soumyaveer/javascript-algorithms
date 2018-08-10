@@ -1,4 +1,4 @@
-const Queue = require('../../../src/containers/queues/queue');
+const Queue = require('./Queue');
 
 
 class PriorityQueue extends Queue {

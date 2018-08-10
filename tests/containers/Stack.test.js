@@ -1,4 +1,4 @@
-const Stack = require('../../src/containers/stack');
+const Stack = require('../../src/containers/Stack');
 
 
 test('push adds element at the top of the stack', () => {
