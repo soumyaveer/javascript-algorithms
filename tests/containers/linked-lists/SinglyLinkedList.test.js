@@ -127,7 +127,6 @@ test('indexOf returns -1 if the element is not in the list', () => {
   singlyLinkedList.append(2);
   singlyLinkedList.append(1);
 
-
   expect(singlyLinkedList.size()).toBe(2);
   expect(singlyLinkedList.indexOf(3)).toBe(-1);
 });
