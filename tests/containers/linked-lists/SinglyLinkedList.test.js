@@ -79,7 +79,14 @@ test('isEmpty returns false if list contains elements', () => {
   let singlyLinkedList = new SinglyLinkedList(1);
   singlyLinkedList.append(2);
 
-  expect(singlyLinkedList.size()).toBe(2);
   expect(singlyLinkedList.isEmpty()).toBe(false);
 });
+
+test('size returns number of elements in list', () => {
+  let singlyLinkedList = new SinglyLinkedList(1);
+  singlyLinkedList.append(2);
+
+  expect(singlyLinkedList.size()).toBe(2);
+});
+
 
