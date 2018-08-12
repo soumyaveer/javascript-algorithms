@@ -176,3 +176,24 @@ test('removeAt deletes the last element in the list', () => {
   expect(doublyLinkedList.indexOf(3)).toBe(-1);
 });
 
+
+test('isEmpty returns true if list does not contain elements', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+
+  expect(doublyLinkedList.isEmpty()).toBe(true);
+});
+
+test('isEmpty returns false if list contains elements', () => {
+  let doublyLinkedList = new DoublyLinkedList(1);
+  doublyLinkedList.append(2);
+
+  expect(doublyLinkedList.isEmpty()).toBe(false);
+});
+
+test('size returns number of elements in list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+
+  expect(doublyLinkedList.size()).toBe(2);
+});
