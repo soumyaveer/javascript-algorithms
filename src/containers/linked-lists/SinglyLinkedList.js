@@ -1,48 +1,63 @@
 const Node = require('../../../src/containers/linked-lists/Node');
 
 class SinglyLinkedList{
-  constructor(element){
-    this.node = new Node(element);
-    this.head = this.node;
-    this.length = 1;
+  constructor(){
+    this.head = null;
   }
 
   //adds new item at the end of the list
   append(element){
-    let current;
+    let currentNode;
     let node = new Node(element);
 
     if (this.head === null){
-      current = node;
+       return this.head = node;
     } else {
-      current = this.head;
+      currentNode = this.head;
     }
 
-    while(current.next){
-      current = current.next;
+    while(currentNode.next){
+      currentNode = currentNode.next;
     }
 
-    current.next = node;
-
-    this.length++;
+    currentNode.next = node;
   }
 
   // size return number of elements in the list
   size(){
-    let current;
+    let currentNode;
+    let length = 0;
 
     if (this.head === null){
-       this.length = 0;
+      return length;
     } else {
-      current = this.head;
+      currentNode = this.head;
     }
 
-    while(current.next){
-      current = current.next;
+    while(currentNode){
+      currentNode = currentNode.next;
+      length += 1;
     }
 
-    return this.length++;
+    return length;
   }
+
+  //remove deletes node from the list
+  remove(elementToBeDeleted){
+    let currentNode = this.head;
+    let previousNode = this.head;
+    let length = this.size();
+
+    while(currentNode.next){
+      if(currentNode.element === elementToBeDeleted){
+        previousNode.next = currentNode.next;
+        length -= 1;
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+  }
+
 }
 
 module.exports = SinglyLinkedList;
