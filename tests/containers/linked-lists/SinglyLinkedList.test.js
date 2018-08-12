@@ -33,7 +33,7 @@ test('remove deletes an item from the list', () => {
   singlyLinkedList.remove(2);
 
   expect(singlyLinkedList.size()).toBe(3);
-  expect(singlyLinkedList.indexOf(3)).toBe(1);
+  expect(singlyLinkedList.indexOf(2)).toBe(-1);
 });
 
 test('indexOf returns the index of the element', () => {

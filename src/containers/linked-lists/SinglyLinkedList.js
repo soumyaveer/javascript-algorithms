@@ -97,6 +97,12 @@ class SinglyLinkedList{
       currentNode = currentNode.next;
     }
   }
+
+  // returns true if LinkedList is empty, returns false if LinkedList has elements
+  isEmpty(){
+    let length = this.size();
+    return  length === 0;
+  }
 }
 
 module.exports = SinglyLinkedList;
