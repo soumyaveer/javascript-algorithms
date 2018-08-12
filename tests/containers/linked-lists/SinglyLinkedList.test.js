@@ -6,7 +6,7 @@ test('append adds a new item to the end of the list', () => {
 
   singlyLinkedList.append(2);
 
-  expect(singlyLinkedList.size()).toBe(2)
+  expect(singlyLinkedList.size()).toBe(2);
 });
 
 test('insert adds a new item at a specified position in the list', () => {
@@ -88,5 +88,3 @@ test('size returns number of elements in list', () => {
 
   expect(singlyLinkedList.size()).toBe(2);
 });
-
-
