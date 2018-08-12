@@ -11,7 +11,8 @@ class SinglyLinkedList{
     let node = new Node(element);
 
     if (this.head === null){
-       return this.head = node;
+       this.head = node;
+       return this.head;
     } else {
       currentNode = this.head;
     }

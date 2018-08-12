@@ -1,7 +1,7 @@
 const SinglyLinkedList = require('../../../src/containers/linked-lists/SinglyLinkedList');
 
 test('append adds a new item to the end of the list', () => {
-  let singlyLinkedList = new SinglyLinkedList;
+  let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);
   singlyLinkedList.append(2);
 
@@ -37,7 +37,7 @@ test('remove deletes an item from the list', () => {
 });
 
 test('indexOf returns the index of the element', () => {
-  let singlyLinkedList = new SinglyLinkedList;
+  let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);
   singlyLinkedList.append(3);
   singlyLinkedList.append(2);
@@ -48,7 +48,7 @@ test('indexOf returns the index of the element', () => {
 });
 
 test('indexOf returns -1 if the element is not in the list', () => {
-  let singlyLinkedList = new SinglyLinkedList;
+  let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(2);
   singlyLinkedList.append(1);
 
@@ -85,7 +85,7 @@ test('isEmpty returns false if list contains elements', () => {
 });
 
 test('size returns number of elements in list', () => {
-  let singlyLinkedList = new SinglyLinkedList;
+  let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);
   singlyLinkedList.append(2);
 
