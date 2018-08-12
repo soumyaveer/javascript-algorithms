@@ -80,6 +80,23 @@ class SinglyLinkedList{
     return indexOfElement;
   }
 
+  // removes an element from specified position in the list
+  removeAt(position){
+    let index = 0;
+    let currentNode = this.head;
+    let previousNode = this.head;
+    let length = this.size();
+
+    while(currentNode.next){
+      if (index === position){
+        previousNode.next = currentNode.next;
+        length -= 1;
+      }
+      index += 1;
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 module.exports = SinglyLinkedList;
