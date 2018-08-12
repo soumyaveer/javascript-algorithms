@@ -37,3 +37,20 @@ test('remove deletes an item from the list', () => {
   expect(singlyLinkedList.indexOf(3)).toBe(1);
 });
 
+test('indexOf returns the index of the element', () => {
+  let singlyLinkedList = new SinglyLinkedList(1);
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+  singlyLinkedList.append(4);
+
+  expect(singlyLinkedList.size()).toBe(4);
+  expect(singlyLinkedList.indexOf(3)).toBe(2);
+});
+
+test('indexOf returns -1 if the element is not in the list', () => {
+  let singlyLinkedList = new SinglyLinkedList(1);
+  singlyLinkedList.append(2);
+
+  expect(singlyLinkedList.size()).toBe(2);
+  expect(singlyLinkedList.indexOf(3)).toBe(-1);
+});
