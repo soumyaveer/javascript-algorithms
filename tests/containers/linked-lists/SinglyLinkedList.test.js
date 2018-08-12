@@ -68,7 +68,6 @@ test('insert adds a new item at the end of the list', () => {
   expect(singlyLinkedList.indexOf(5)).toBe(4);
 });
 
-
 test('remove deletes an item from the list', () => {
   let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);
@@ -97,7 +96,6 @@ test('remove deletes first item from the list', () => {
   expect(singlyLinkedList.size()).toBe(3);
   expect(singlyLinkedList.indexOf(1)).toBe(-1);
 });
-
 
 test('remove deletes last item from the list', () => {
   let singlyLinkedList = new SinglyLinkedList();

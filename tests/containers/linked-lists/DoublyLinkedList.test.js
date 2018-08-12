@@ -67,3 +67,46 @@ test('insert adds a new item at the end of the list', () => {
   expect(doublyLinkedList.indexOf(5)).toBe(4);
 });
 
+
+test('remove deletes an item from the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+  doublyLinkedList.append(4);
+
+  expect(doublyLinkedList.size()).toBe(4);
+  doublyLinkedList.remove(2);
+
+  expect(doublyLinkedList.size()).toBe(3);
+  expect(doublyLinkedList.indexOf(2)).toBe(-1);
+});
+
+
+test('remove deletes first item from the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+  doublyLinkedList.append(4);
+
+  expect(doublyLinkedList.size()).toBe(4);
+  doublyLinkedList.remove(1);
+
+  expect(doublyLinkedList.size()).toBe(3);
+  expect(doublyLinkedList.indexOf(1)).toBe(-1);
+});
+
+test('remove deletes last item from the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+  doublyLinkedList.append(4);
+
+  expect(doublyLinkedList.size()).toBe(4);
+  doublyLinkedList.remove(4);
+
+  expect(doublyLinkedList.size()).toBe(3);
+  expect(doublyLinkedList.indexOf(4)).toBe(-1);
+});
