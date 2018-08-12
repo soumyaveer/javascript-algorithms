@@ -70,10 +70,10 @@ class SinglyLinkedList{
     }
 
     while(currentNode.next){
-      index += 1;
       if(currentNode.element === element){
         indexOfElement = index;
       }
+      index += 1;
       currentNode = currentNode.next;
     }
 
@@ -102,6 +102,27 @@ class SinglyLinkedList{
   isEmpty(){
     let length = this.size();
     return  length === 0;
+  }
+
+  // inserts the element at specified position
+  insert(position, element){
+    let index = 0;
+    let node = new Node(element);
+
+    if(position === 0){
+      node.next = this.head;
+      this.head = node;
+    }
+    let currentNode = this.head;
+
+    while(currentNode.next){
+      if((index + 1) === position){
+        node.next = currentNode.next;
+        currentNode.next = node;
+      }
+      index += 1;
+      currentNode = currentNode.next;
+    }
   }
 }
 
