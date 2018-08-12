@@ -134,6 +134,21 @@ test('removeAt deletes an item from the head position in the list', () => {
   expect(singlyLinkedList.indexOf(1)).toBe(-1);
 });
 
+
+test('removeAt deletes the last element in the list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+  singlyLinkedList.append(1);
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+
+  expect(singlyLinkedList.size()).toBe(3);
+
+  singlyLinkedList.removeAt(2);
+
+  expect(singlyLinkedList.size()).toBe(2);
+  expect(singlyLinkedList.indexOf(3)).toBe(-1);
+});
+
 test('isEmpty returns true if list does not contain elements', () => {
   let singlyLinkedList = new SinglyLinkedList();
 

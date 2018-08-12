@@ -103,7 +103,7 @@ class SinglyLinkedList{
       length -= 1;
     }
 
-    while(currentNode.next){
+    while(currentNode){
       if (index === position){
         previousNode.next = currentNode.next;
         length -= 1;
