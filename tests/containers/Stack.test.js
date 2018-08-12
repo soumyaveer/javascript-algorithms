@@ -42,7 +42,7 @@ test('isEmpty returns false if stack has elements', () => {
   expect(stack.isEmpty()).toBe(false);
 });
 
-test('clear removes all elements from the stach', () => {
+test('clear removes all elements from the stack', () => {
   let stack = new Stack();
 
   stack.push(1);

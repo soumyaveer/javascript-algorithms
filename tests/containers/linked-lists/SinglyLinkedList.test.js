@@ -2,7 +2,6 @@ const SinglyLinkedList = require('../../../src/containers/linked-lists/SinglyLin
 
 test('append adds a new item to the end of the list', () => {
   let singlyLinkedList = new SinglyLinkedList(1);
-
   singlyLinkedList.append(2);
 
   expect(singlyLinkedList.size()).toBe(2);
