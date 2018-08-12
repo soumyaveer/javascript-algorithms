@@ -53,10 +53,25 @@ class DoublyLinkedList{
     return indexOfElement;
   }
 
+  // inserts the element at specified position
+  insert(position, element){
+
+  }
+
   // returns true if LinkedList is empty, returns false if LinkedList has elements
   isEmpty(){
     let length = this.size();
     return  length === 0;
+  }
+
+  //remove deletes node from the list
+  remove(element){
+
+  }
+
+  // removes an element from specified position in the list
+  removeAt(position){
+
   }
 
   // size return number of elements in the list
