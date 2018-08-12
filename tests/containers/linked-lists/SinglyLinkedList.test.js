@@ -83,6 +83,36 @@ test('remove deletes an item from the list', () => {
   expect(singlyLinkedList.indexOf(2)).toBe(-1);
 });
 
+
+test('remove deletes first item from the list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+  singlyLinkedList.append(1);
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+  singlyLinkedList.append(4);
+
+  expect(singlyLinkedList.size()).toBe(4);
+  singlyLinkedList.remove(1);
+
+  expect(singlyLinkedList.size()).toBe(3);
+  expect(singlyLinkedList.indexOf(1)).toBe(-1);
+});
+
+
+test('remove deletes last item from the list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+  singlyLinkedList.append(1);
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+  singlyLinkedList.append(4);
+
+  expect(singlyLinkedList.size()).toBe(4);
+  singlyLinkedList.remove(4);
+
+  expect(singlyLinkedList.size()).toBe(3);
+  expect(singlyLinkedList.indexOf(4)).toBe(-1);
+});
+
 test('indexOf returns the index of the element', () => {
   let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);

@@ -79,7 +79,12 @@ class SinglyLinkedList{
     let previousNode = this.head;
     let length = this.size();
 
-    while(currentNode.next){
+    if (this.head.element === element){
+      currentNode = currentNode.next;
+      this.head = currentNode;
+      length -= 1;    }
+
+    while(currentNode){
       if(currentNode.element === element){
         previousNode.next = currentNode.next;
         length -= 1;
