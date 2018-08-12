@@ -15,7 +15,7 @@ test('constructor creates a new node with element 2 and has previous node', () =
   expect(currentNode.element).toBe(2);
 
   currentNode.previous = previousNode;
-  expect(currentNode.previous.element).toBe(previousNode.element)
+  expect(currentNode.previous.element).toBe(previousNode.element);
 });
 
 test('constructor creates a new node with element 2 and has next node', () => {
@@ -26,5 +26,5 @@ test('constructor creates a new node with element 2 and has next node', () => {
   expect(currentNode.element).toBe(2);
 
   currentNode.next = nextNode;
-  expect(currentNode.next.element).toBe(nextNode.element)
+  expect(currentNode.next.element).toBe(nextNode.element);
 });
