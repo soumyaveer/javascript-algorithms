@@ -1,4 +1,3 @@
-const Node = require('../../../src/containers/linked-lists/Node');
 const SinglyLinkedList = require('../../../src/containers/linked-lists/SinglyLinkedList');
 
 test('append adds a new item to the end of the list', () => {
