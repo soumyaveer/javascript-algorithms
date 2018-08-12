@@ -124,11 +124,55 @@ test('indexOf returns the index of the element', () => {
 });
 
 test('indexOf returns -1 if the element is not in the list', () => {
-  let singlyLinkedList = new DoublyLinkedList();
-  singlyLinkedList.append(2);
-  singlyLinkedList.append(1);
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(1);
 
 
-  expect(singlyLinkedList.size()).toBe(2);
-  expect(singlyLinkedList.indexOf(3)).toBe(-1);
+  expect(doublyLinkedList.size()).toBe(2);
+  expect(doublyLinkedList.indexOf(3)).toBe(-1);
 });
+
+test('removeAt deletes an item from a specified position in the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+  doublyLinkedList.append(4);
+
+  expect(doublyLinkedList.size()).toBe(4);
+
+  doublyLinkedList.removeAt(2);
+
+  expect(doublyLinkedList.size()).toBe(3);
+  expect(doublyLinkedList.indexOf(3)).toBe(-1);
+});
+
+test('removeAt deletes an item from the head position in the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+
+  expect(doublyLinkedList.size()).toBe(3);
+
+  doublyLinkedList.removeAt(0);
+
+  expect(doublyLinkedList.size()).toBe(2);
+  expect(doublyLinkedList.indexOf(1)).toBe(-1);
+});
+
+test('removeAt deletes the last element in the list', () => {
+  let doublyLinkedList = new DoublyLinkedList();
+  doublyLinkedList.append(1);
+  doublyLinkedList.append(2);
+  doublyLinkedList.append(3);
+
+  expect(doublyLinkedList.size()).toBe(3);
+
+  doublyLinkedList.removeAt(2);
+
+  expect(doublyLinkedList.size()).toBe(2);
+  expect(doublyLinkedList.indexOf(3)).toBe(-1);
+});
+
