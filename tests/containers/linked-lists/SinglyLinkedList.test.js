@@ -1,5 +1,16 @@
 const SinglyLinkedList = require('../../../src/containers/linked-lists/SinglyLinkedList');
 
+test('append adds a new item at the head of an empty list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+
+  expect(singlyLinkedList.isEmpty()).toBe(true);
+
+  singlyLinkedList.append(1);
+
+  expect(singlyLinkedList.size()).toBe(1);
+});
+
+
 test('append adds a new item to the end of the list', () => {
   let singlyLinkedList = new SinglyLinkedList();
   singlyLinkedList.append(1);
