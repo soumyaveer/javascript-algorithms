@@ -30,6 +30,28 @@ class DoublyLinkedList{
     currentNode.previous = previousNode;
   }
 
+  // returns the index of element in the list
+  indexOf(element){
+    let index = 0;
+    let indexOfElement = -1;
+    let currentNode = this.head;
+
+    // Case 1: When list is empty, element is not found
+    if (this.head === null){
+      return -1;
+    }
+
+    // Case 2: When list is not empty. search for the index of element
+    while(currentNode){
+      if(currentNode.element === element){
+        indexOfElement = index;
+      }
+      index += 1;
+      currentNode = currentNode.next;
+    }
+
+    return indexOfElement;
+  }
 
   // returns true if LinkedList is empty, returns false if LinkedList has elements
   isEmpty(){
