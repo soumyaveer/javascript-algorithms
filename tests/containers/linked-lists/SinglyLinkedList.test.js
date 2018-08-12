@@ -23,8 +23,40 @@ test('insert adds a new item at a specified position in the list', () => {
   expect(singlyLinkedList.indexOf(1)).toBe(0);
   expect(singlyLinkedList.indexOf(2)).toBe(1);
   expect(singlyLinkedList.indexOf(3)).toBe(2);
-
 });
+
+test('insert adds a new item at the beginning of the list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+  singlyLinkedList.append(4);
+  singlyLinkedList.append(5);
+
+  expect(singlyLinkedList.size()).toBe(4);
+
+  singlyLinkedList.insert(0, 1);
+
+  expect(singlyLinkedList.size()).toBe(5);
+  expect(singlyLinkedList.indexOf(1)).toBe(0);
+  expect(singlyLinkedList.indexOf(2)).toBe(1);
+});
+
+test('insert adds a new item at the end of the list', () => {
+  let singlyLinkedList = new SinglyLinkedList();
+  singlyLinkedList.append(1);
+  singlyLinkedList.append(2);
+  singlyLinkedList.append(3);
+  singlyLinkedList.append(4);
+
+  expect(singlyLinkedList.size()).toBe(4);
+
+  singlyLinkedList.insert(4, 5);
+
+  expect(singlyLinkedList.size()).toBe(5);
+  expect(singlyLinkedList.indexOf(4)).toBe(3);
+  expect(singlyLinkedList.indexOf(5)).toBe(4);
+});
+
 
 test('remove deletes an item from the list', () => {
   let singlyLinkedList = new SinglyLinkedList();

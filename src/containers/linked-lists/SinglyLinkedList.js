@@ -24,41 +24,6 @@ class SinglyLinkedList{
     currentNode.next = node;
   }
 
-  // size return number of elements in the list
-  size(){
-    let currentNode;
-    let length = 0;
-
-    if (this.head === null){
-      return length;
-    } else {
-      currentNode = this.head;
-    }
-
-    while(currentNode){
-      currentNode = currentNode.next;
-      length += 1;
-    }
-
-    return length;
-  }
-
-  //remove deletes node from the list
-  remove(elementToBeDeleted){
-    let currentNode = this.head;
-    let previousNode = this.head;
-    let length = this.size();
-
-    while(currentNode.next){
-      if(currentNode.element === elementToBeDeleted){
-        previousNode.next = currentNode.next;
-        length -= 1;
-      }
-      previousNode = currentNode;
-      currentNode = currentNode.next;
-    }
-  }
-
   // returns the index of element in the list
   indexOf(element){
     let index = 0;
@@ -69,7 +34,7 @@ class SinglyLinkedList{
       return -1;
     }
 
-    while(currentNode.next){
+    while(currentNode){
       if(currentNode.element === element){
         indexOfElement = index;
       }
@@ -79,6 +44,51 @@ class SinglyLinkedList{
 
     return indexOfElement;
   }
+
+  // inserts the element at specified position
+  insert(position, element){
+    let index = 0;
+    let node = new Node(element);
+
+    if(position === 0){
+      node.next = this.head;
+      this.head = node;
+    }
+
+    let currentNode = this.head;
+
+    while(currentNode){
+      if((index + 1) === position){
+        node.next = currentNode.next;
+        currentNode.next = node;
+      }
+      index += 1;
+      currentNode = currentNode.next;
+    }
+  }
+
+  // returns true if LinkedList is empty, returns false if LinkedList has elements
+  isEmpty(){
+    let length = this.size();
+    return  length === 0;
+  }
+
+  //remove deletes node from the list
+  remove(element){
+    let currentNode = this.head;
+    let previousNode = this.head;
+    let length = this.size();
+
+    while(currentNode.next){
+      if(currentNode.element === element){
+        previousNode.next = currentNode.next;
+        length -= 1;
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+  }
+
 
   // removes an element from specified position in the list
   removeAt(position){
@@ -98,31 +108,23 @@ class SinglyLinkedList{
     }
   }
 
-  // returns true if LinkedList is empty, returns false if LinkedList has elements
-  isEmpty(){
-    let length = this.size();
-    return  length === 0;
-  }
+  // size return number of elements in the list
+  size(){
+    let currentNode;
+    let length = 0;
 
-  // inserts the element at specified position
-  insert(position, element){
-    let index = 0;
-    let node = new Node(element);
-
-    if(position === 0){
-      node.next = this.head;
-      this.head = node;
+    if (this.head === null){
+      return length;
+    } else {
+      currentNode = this.head;
     }
-    let currentNode = this.head;
 
-    while(currentNode.next){
-      if((index + 1) === position){
-        node.next = currentNode.next;
-        currentNode.next = node;
-      }
-      index += 1;
+    while(currentNode){
       currentNode = currentNode.next;
+      length += 1;
     }
+
+    return length;
   }
 }
 
