@@ -110,7 +110,29 @@ class DoublyLinkedList{
 
   // removes an element from specified position in the list
   removeAt(position){
+    let index = 0;
+    let currentNode = this.head;
+    let previousNode = this.head;
 
+    // Case 1: When element has to be removed from head position
+    if (position === 0){
+      this.head = currentNode.next;
+      this.head.previous = null;
+      currentNode = this.head;
+    }
+
+    // Case 2: When element has to be removed from positions in between or the last position in the list
+    while(currentNode){
+      if (index === position){
+        previousNode.next = currentNode.next;
+        if(currentNode.next) {
+          currentNode.next.previous = previousNode;
+        }
+      }
+      index += 1;
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
   }
 
   // size return number of elements in the list
