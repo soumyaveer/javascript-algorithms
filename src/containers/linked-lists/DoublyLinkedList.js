@@ -86,7 +86,26 @@ class DoublyLinkedList{
 
   //remove deletes node from the list
   remove(element){
+    let currentNode = this.head;
+    let previousNode = this.head.previous;
 
+    // Case 1: When element has to be removed from the head position in the list
+    if (this.head.element === element){
+      currentNode = currentNode.next;
+      this.head = currentNode;
+    }
+
+    // Case 2: When Element has to be removed from in between or the last position in the list
+    while(currentNode){
+      if(currentNode.element === element){
+        previousNode.next = currentNode.next;
+        if(currentNode.next) {
+          currentNode.next.previous = previousNode;
+        }
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
   }
 
   // removes an element from specified position in the list
