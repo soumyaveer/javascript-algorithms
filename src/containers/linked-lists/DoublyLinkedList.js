@@ -55,7 +55,27 @@ class DoublyLinkedList{
 
   // inserts the element at specified position
   insert(position, element){
+    let index = 0;
+    let node = new Node(element);
 
+    // Case 1: When element has to be inserted at head position
+    if (position === 0) {
+      node.next = this.head;
+      this.head = node;
+    }
+
+    let currentNode = this.head;
+
+    // Case 2: When element has to be inserted in between the list or at the end of the list
+    while(currentNode){
+      if((index + 1) === position){
+        node.previous = currentNode;
+        node.next = currentNode.next;
+        currentNode.next = node;
+      }
+      index += 1;
+      currentNode = currentNode.next;
+    }
   }
 
   // returns true if LinkedList is empty, returns false if LinkedList has elements
