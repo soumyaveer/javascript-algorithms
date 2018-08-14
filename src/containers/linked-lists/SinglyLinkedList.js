@@ -13,24 +13,25 @@ class SinglyLinkedList{
     // Case 1: If list is empty, i.e. head has no element append node as head
     if (this.head === null){
        this.head = node;
-       return this.head;
+       return;
     } else {
       currentNode = this.head;
-    }
 
-    // Case 2: If list has elements, we want to add the node at the end of the list
-    while(currentNode.next){
-      currentNode = currentNode.next;
-    }
 
-    currentNode.next = node;
+      // Case 2: If list has elements, we want to add the node at the end of the list
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
   }
 
   // returns the index of element in the list
   indexOf(element){
     let index = 0;
     let indexOfElement = -1;
-    let currentNode = this.head;
+    let currentNode;
 
     // Case 1: When list is empty, element is not found
     if (this.head === null){
@@ -38,6 +39,8 @@ class SinglyLinkedList{
     }
 
     // Case 2: When list is not empty. search for the index of element
+    currentNode = this.head;
+
     while(currentNode){
       if(currentNode.element === element){
         indexOfElement = index;
@@ -58,6 +61,7 @@ class SinglyLinkedList{
     if(position === 0){
       node.next = this.head;
       this.head = node;
+      return;
     }
 
     let currentNode = this.head;
@@ -75,28 +79,29 @@ class SinglyLinkedList{
 
   // returns true if LinkedList is empty, returns false if LinkedList has elements
   isEmpty(){
-    let length = this.size();
-    return  length === 0;
+    let size = this.size();
+    return  size === 0;
   }
 
   //remove deletes node from the list
   remove(element){
     let currentNode = this.head;
     let previousNode = this.head;
-    let length = this.size();
+    let size = this.size();
 
     // Case 1: When element has to be removed from the head position in the list
     if (this.head.element === element){
       currentNode = currentNode.next;
       this.head = currentNode;
-      length -= 1;
+      size -= 1;
+      return;
     }
 
     // Case 2: When Element has to be removed from in between or the last position in the list
     while(currentNode){
       if(currentNode.element === element){
         previousNode.next = currentNode.next;
-        length -= 1;
+        size -= 1;
       }
       previousNode = currentNode;
       currentNode = currentNode.next;
@@ -109,20 +114,21 @@ class SinglyLinkedList{
     let index = 0;
     let currentNode = this.head;
     let previousNode = this.head;
-    let length = this.size();
+    let size = this.size();
 
     // Case 1: When element has to be removed from head position
     if (position === 0){
       currentNode = currentNode.next;
       this.head = currentNode;
-      length -= 1;
+      size -= 1;
+      return;
     }
 
     // Case 2: When element has to be removed from positions in between or the last position in the list
     while(currentNode){
       if (index === position){
         previousNode.next = currentNode.next;
-        length -= 1;
+        size -= 1;
       }
       index += 1;
       previousNode = currentNode;
@@ -133,11 +139,11 @@ class SinglyLinkedList{
   // size return number of elements in the list
   size(){
     let currentNode;
-    let length = 0;
+    let size = 0;
 
     // Case 1: When the list is empty, return size as 0
     if (this.head === null){
-      return length;
+      return 0;
     } else {
       currentNode = this.head;
     }
@@ -145,10 +151,10 @@ class SinglyLinkedList{
     // Case 2: When the list is not empty, find the size of the list
     while(currentNode){
       currentNode = currentNode.next;
-      length += 1;
+      size += 1;
     }
 
-    return length;
+    return size;
   }
 }
 

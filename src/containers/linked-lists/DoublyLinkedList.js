@@ -15,7 +15,7 @@ class DoublyLinkedList{
     // Case 1: If list is empty, i.e. head has no element append node as head
     if (this.head === null){
       this.head = node;
-      return this.head;
+      return ;
     } else {
       currentNode = this.head;
     }
@@ -62,6 +62,7 @@ class DoublyLinkedList{
     if (position === 0) {
       node.next = this.head;
       this.head = node;
+      return;
     }
 
     let currentNode = this.head;
@@ -80,8 +81,8 @@ class DoublyLinkedList{
 
   // returns true if LinkedList is empty, returns false if LinkedList has elements
   isEmpty(){
-    let length = this.size();
-    return  length === 0;
+    let size = this.size();
+    return  size === 0;
   }
 
   //remove deletes node from the list
@@ -93,6 +94,7 @@ class DoublyLinkedList{
     if (this.head.element === element){
       currentNode = currentNode.next;
       this.head = currentNode;
+      return;
     }
 
     // Case 2: When Element has to be removed from in between or the last position in the list
@@ -112,16 +114,17 @@ class DoublyLinkedList{
   removeAt(position){
     let index = 0;
     let currentNode = this.head;
-    let previousNode = this.head;
+    let previousNode;
 
     // Case 1: When element has to be removed from head position
     if (position === 0){
       this.head = currentNode.next;
-      this.head.previous = null;
-      currentNode = this.head;
+      return;
     }
 
     // Case 2: When element has to be removed from positions in between or the last position in the list
+    previousNode = this.head;
+
     while(currentNode){
       if (index === position){
         previousNode.next = currentNode.next;
@@ -136,26 +139,26 @@ class DoublyLinkedList{
   }
 
   // size return number of elements in the list
-  size(){
+  size() {
     let currentNode;
-    let length = 0;
+    let size = 0;
 
     // Case 1: When the list is empty, return size as 0
-    if (this.head === null){
-      return length;
+    if (this.head === null) {
+      return 0;
     } else {
       currentNode = this.head;
-    }
 
-    // Case 2: When the list is not empty, find the size of the list
-    while(currentNode){
-      currentNode = currentNode.next;
-      length += 1;
-    }
 
-    return length;
+      // Case 2: When the list is not empty, find the size of the list
+      while (currentNode) {
+        currentNode = currentNode.next;
+        size += 1;
+      }
+
+      return size;
+    }
   }
-
 }
 
 module.exports = DoublyLinkedList;
