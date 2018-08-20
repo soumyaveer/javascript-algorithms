@@ -146,4 +146,16 @@ describe('remove()', () => {
     expect(tree.remove(3)).toBe(3);
     expect(tree.preOrderTraversal()).toBe("5 7 15 11");
   });
+
+  test('removes a key from the tree, when node has a left or a right child', () => {
+    const tree = new BinarySearchTree();
+    tree.insert(11);
+    tree.insert(7);
+    tree.insert(15);
+    tree.insert(5);
+    tree.insert(3);
+
+    expect(tree.remove(7)).toBe(7);
+    expect(tree.preOrderTraversal()).toBe("3 5 15 11");
+  });
 });
