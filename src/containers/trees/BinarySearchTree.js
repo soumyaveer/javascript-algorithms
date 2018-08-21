@@ -56,6 +56,7 @@ class BinarySearchTree{
     }
   }
 
+  // returns the minimum node of the tree
   min(){
     return this.minNode(this.root);
   }
@@ -65,9 +66,26 @@ class BinarySearchTree{
       return
     }
 
-    while(node && node.left){
+    while(node.left){
       node = node.left;
     }
+    return node.key;
+  }
+
+  //returns the max node of the tree
+  max(){
+    return this.maxNode(this.root);
+  }
+
+  maxNode(node){
+    if(node === null){
+      return
+    }
+
+    while(node.right){
+      node = node.right;
+    }
+
     return node.key;
   }
 }
