@@ -41,6 +41,50 @@ describe('search()', () =>{
   });
 });
 
+describe('min()', () =>{
+  test('returns the minimum value of the tree', () => {
+    const tree = new BinarySearchTree();
+    tree.insert(11);
+    tree.insert(7);
+    tree.insert(15);
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(9);
+    tree.insert(8);
+    tree.insert(10);
+    tree.insert(13);
+    tree.insert(12);
+    tree.insert(14);
+    tree.insert(20);
+    tree.insert(18);
+    tree.insert(25);
+
+    expect(tree.min()).toBe(3);
+  });
+});
+
+describe('max()', () =>{
+  test('returns the maximum value of the tree', () => {
+    const tree = new BinarySearchTree();
+    tree.insert(11);
+    tree.insert(7);
+    tree.insert(15);
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(9);
+    tree.insert(8);
+    tree.insert(10);
+    tree.insert(13);
+    tree.insert(12);
+    tree.insert(14);
+    tree.insert(20);
+    tree.insert(18);
+    tree.insert(25);
+
+    expect(tree.max()).toBe(25);
+  });
+});
+
 describe('inOrderTraverse()', () => {
   test('visits all node of the tree using in-order-traversal', () => {
     const tree = new BinarySearchTree();
