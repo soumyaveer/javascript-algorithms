@@ -55,6 +55,21 @@ class BinarySearchTree{
       return true;
     }
   }
+
+  min(){
+    return this.minNode(this.root);
+  }
+
+  minNode(node){
+    if(node === null) {
+      return
+    }
+
+    while(node && node.left){
+      node = node.left;
+    }
+    return node.key;
+  }
 }
 
 module.exports = BinarySearchTree;
