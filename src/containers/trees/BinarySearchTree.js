@@ -3,7 +3,7 @@ const Node = require('../../../src/containers/trees/Node');
 class BinarySearchTree{
   constructor(){
     this.root = null;
-  };
+  }
 
   // returns the root of the tree
   getRoot(){
@@ -32,14 +32,14 @@ class BinarySearchTree{
       if(node.right === null) {
         node.right = newNode;
       } else {
-        this.insertNode(node.right, newNode)
+        this.insertNode(node.right, newNode);
       }
     }
   };
 
   //returns the true if key is present in the tree otherwise false
   search(key){
-    return this.searchKey(this.root, key)
+    return this.searchKey(this.root, key);
   }
 
   searchKey(node, key){
@@ -52,9 +52,9 @@ class BinarySearchTree{
     } else if(key > node.key){
       return this.searchKey(node.right, key);
     } else {
-      return true;
+      return true
     }
-  };
+  }
 }
 
 module.exports = BinarySearchTree;
