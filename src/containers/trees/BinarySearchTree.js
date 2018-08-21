@@ -63,7 +63,7 @@ class BinarySearchTree{
 
   minNode(node){
     if(node === null) {
-      return
+      return;
     }
 
     while(node.left){
@@ -79,7 +79,7 @@ class BinarySearchTree{
 
   maxNode(node){
     if(node === null){
-      return
+      return;
     }
 
     while(node.right){
