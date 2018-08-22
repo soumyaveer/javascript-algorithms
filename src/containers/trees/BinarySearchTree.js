@@ -120,6 +120,22 @@ class BinarySearchTree{
 
     return nodeKeys.join(" ").trim();
   }
+
+  postOrderTraverse(){
+    return this.postOrderTraverseNode(this.root);
+  }
+
+  postOrderTraverseNode(node){
+    let nodeKeys = [];
+
+    if(node){
+      nodeKeys.push(this.postOrderTraverseNode(node.left));
+      nodeKeys.push(this.postOrderTraverseNode(node.right));
+      nodeKeys.push(node.key);
+    }
+
+    return nodeKeys.join(" ").trim();
+  }
 }
 
 module.exports = BinarySearchTree;

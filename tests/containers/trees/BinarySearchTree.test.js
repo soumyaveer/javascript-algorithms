@@ -139,6 +139,7 @@ describe('postOrderTraverse()', () => {
     tree.insert(15);
     tree.insert(5);
     tree.insert(3);
+    tree.insert(6);
     tree.insert(9);
     tree.insert(8);
     tree.insert(10);
@@ -150,33 +151,6 @@ describe('postOrderTraverse()', () => {
     tree.insert(25);
 
     expect(tree.postOrderTraverse()).toBe("3 6 5 8 10 9 7 12 14 13 18 25 20 15 11");
-  });
-});
-
-describe('min()', () => {
-  test('returns minimum value/key of the tree', () => {
-    const tree = new BinarySearchTree();
-    tree.insert(11);
-    tree.insert(7);
-    tree.insert(15);
-    tree.insert(5);
-    tree.insert(3);
-
-    expect(tree.min()).toBe(3);
-  });
-});
-
-
-describe('max()', () => {
-  test('returns the maximum value/key of the tree', () => {
-    const tree = new BinarySearchTree();
-    tree.insert(11);
-    tree.insert(7);
-    tree.insert(15);
-    tree.insert(5);
-    tree.insert(3);
-
-    expect(tree.max()).toBe(15);
   });
 });
 
