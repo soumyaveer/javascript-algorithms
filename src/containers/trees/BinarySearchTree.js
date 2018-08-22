@@ -88,6 +88,22 @@ class BinarySearchTree{
 
     return node.key;
   }
+
+  inOrderTraverse(){
+    return this.inOrderTraverseNode(this.root)
+  }
+
+  inOrderTraverseNode(node){
+    let nodeKeys = [];
+
+    if(node){
+      nodeKeys.push(this.inOrderTraverseNode(node.left));
+      nodeKeys.push(node.key);
+      nodeKeys.push(this.inOrderTraverseNode(node.right));
+    }
+
+    return nodeKeys.join(" ").trim();
+  }
 }
 
 module.exports = BinarySearchTree;

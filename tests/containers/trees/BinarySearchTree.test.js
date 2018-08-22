@@ -93,6 +93,7 @@ describe('inOrderTraverse()', () => {
     tree.insert(15);
     tree.insert(5);
     tree.insert(3);
+    tree.insert(6);
     tree.insert(9);
     tree.insert(8);
     tree.insert(10);
@@ -103,7 +104,7 @@ describe('inOrderTraverse()', () => {
     tree.insert(18);
     tree.insert(25);
 
-    expect(tree.inOrderTraversal()).toBe("3 5 6 7 8 10 11 12 13 14 15 18 20 25");
+    expect(tree.inOrderTraverse()).toBe("3 5 6 7 8 9 10 11 12 13 14 15 18 20 25");
   });
 });
 
@@ -115,6 +116,7 @@ describe('preOrderTraverse()', () => {
     tree.insert(15);
     tree.insert(5);
     tree.insert(3);
+    tree.insert(6);
     tree.insert(9);
     tree.insert(8);
     tree.insert(10);
