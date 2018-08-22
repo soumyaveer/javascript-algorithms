@@ -90,7 +90,7 @@ class BinarySearchTree{
   }
 
   inOrderTraverse(){
-    return this.inOrderTraverseNode(this.root)
+    return this.inOrderTraverseNode(this.root);
   }
 
   inOrderTraverseNode(node){
