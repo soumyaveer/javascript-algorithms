@@ -102,7 +102,8 @@ class BinarySearchTree{
       nodeKeys.push(this.inOrderTraverseNode(node.right));
     }
 
-    return nodeKeys.join(" ").trim();
+    nodeKeys = [].concat.apply([], nodeKeys);
+    return nodeKeys;
   }
 
   preOrderTraverse(){
@@ -118,7 +119,9 @@ class BinarySearchTree{
       nodeKeys.push(this.preOrderTraverseNode(node.right));
     }
 
-    return nodeKeys.join(" ").trim();
+     nodeKeys = [].concat.apply([], nodeKeys);
+
+    return nodeKeys;
   }
 
   postOrderTraverse(){
@@ -134,43 +137,51 @@ class BinarySearchTree{
       nodeKeys.push(node.key);
     }
 
-    return nodeKeys.join(" ").trim();
+    nodeKeys = [].concat.apply([], nodeKeys);
+    return nodeKeys
   }
 
   remove(key){
     this.root = this.removeNode(this.root, key);
   }
 
-  removeNode(node, key){
-    if (node === null){
+  removeNode(node, key) {
+    if (node === null) {
       return;
     }
 
-    if(key < node.key){
+    if (key < node.key) {
       node.left = this.removeNode(node.left, key);
       return node;
-    } else if(key > node.key){
+    } else if (key > node.key) {
       node.right = this.removeNode(node.right, key);
       return node;
     } else {
-      if(node.left === null && node.right === null) {
+      if (node.left === null && node.right === null) {
         node = null;
         return node;
       }
 
-      if(node.left === null) {
+      if (node.left === null) {
         node = node.right;
         return node;
-      } else if(node.right === null){
+      } else if (node.right === null) {
         node = node.left;
         return node;
       }
 
-      var minNode = this.min(node.right);
+      let minNode = this.findMin(node.right);
       node.key = minNode.key;
       node.right = this.removeNode(node.right, minNode.key);
       return node;
     }
+  }
+
+  findMin(node){
+    while(node && node.left !== null){
+      node = node.left;
+    }
+    return node;
   }
 }
 
