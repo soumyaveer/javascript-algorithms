@@ -19,8 +19,9 @@ describe('insert()', () => {
 
     avlTree.insert(90);
 
-    expect(avlTree.inOrderTraverse()).toMatchObject([30, 50, 60, 70, 80, 90])
-
+    expect(avlTree.height).toBe(2);
+    expect(avlTree.getRoot().key).toBe(70);
+    expect(avlTree.preOrderTraverse()).toMatchObject([70, 50, 30, 60, 80, 90]);
   });
 
   test('inserts key to the avl tree - Left Left Rotation', () => {
@@ -33,7 +34,9 @@ describe('insert()', () => {
 
     avlTree.insert(5);
 
-    expect(avlTree.inOrderTraverse()).toMatchObject([5, 10, 30, 40, 50, 70])
+    expect(avlTree.height).toBe(2);
+    expect(avlTree.getRoot().key).toBe(30);
+    expect(avlTree.preOrderTraverse()).toMatchObject([30,10, 5, 50, 40, 70]);
   });
 
 
@@ -47,7 +50,9 @@ describe('insert()', () => {
 
     avlTree.insert(35);
 
-    expect(avlTree.inOrderTraverse()).toMatchObject([10, 30, 35, 40, 50, 70])
+    expect(avlTree.height).toBe(2);
+    expect(avlTree.getRoot().key).toBe(40);
+    expect(avlTree.preOrderTraverse()).toMatchObject([40, 30, 10, 35, 50, 70]);
   });
 
 
@@ -61,6 +66,8 @@ describe('insert()', () => {
 
     avlTree.insert(75);
 
-    expect(avlTree.inOrderTraverse()).toMatchObject([50, 70, 72, 75, 80, 90])
+    expect(avlTree.height).toBe(2);
+    expect(avlTree.getRoot().key).toBe(72);
+    expect(avlTree.preOrderTraverse()).toMatchObject([72, 70, 50, 80, 75, 90]);
   });
-};
+});

@@ -138,7 +138,7 @@ class BinarySearchTree{
     }
 
     nodeKeys = [].concat.apply([], nodeKeys);
-    return nodeKeys
+    return nodeKeys;
   }
 
   remove(key){
