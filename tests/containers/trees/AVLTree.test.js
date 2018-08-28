@@ -14,12 +14,13 @@ describe('insert()', () => {
     avlTree.insert(50);
     avlTree.insert(30);
     avlTree.insert(70);
-    avlTree.insert(80);
     avlTree.insert(60);
+    avlTree.insert(80);
 
+    // inserting a node that unbalances the tree
     avlTree.insert(90);
 
-    expect(avlTree.height).toBe(2);
+    // returns the balanced tree
     expect(avlTree.getRoot().key).toBe(70);
     expect(avlTree.preOrderTraverse()).toMatchObject([70, 50, 30, 60, 80, 90]);
   });
@@ -32,9 +33,10 @@ describe('insert()', () => {
     avlTree.insert(10);
     avlTree.insert(40);
 
+    // inserting a node that unbalances the tree
     avlTree.insert(5);
 
-    expect(avlTree.height).toBe(2);
+    // returns the balanced tree
     expect(avlTree.getRoot().key).toBe(30);
     expect(avlTree.preOrderTraverse()).toMatchObject([30,10, 5, 50, 40, 70]);
   });
@@ -48,9 +50,10 @@ describe('insert()', () => {
     avlTree.insert(10);
     avlTree.insert(40);
 
+    // inserting the node that unbalances the tree
     avlTree.insert(35);
 
-    expect(avlTree.height).toBe(2);
+    //returning the balanced tree
     expect(avlTree.getRoot().key).toBe(40);
     expect(avlTree.preOrderTraverse()).toMatchObject([40, 30, 10, 35, 50, 70]);
   });
@@ -64,9 +67,10 @@ describe('insert()', () => {
     avlTree.insert(72);
     avlTree.insert(90);
 
+    // inserting the node that unbalances the tree
     avlTree.insert(75);
 
-    expect(avlTree.height).toBe(2);
+    // returning the balanced tree
     expect(avlTree.getRoot().key).toBe(72);
     expect(avlTree.preOrderTraverse()).toMatchObject([72, 70, 50, 80, 75, 90]);
   });

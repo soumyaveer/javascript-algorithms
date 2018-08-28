@@ -1,6 +1,6 @@
 const Node = require('../../../src/containers/trees/Node');
 
-class AVLTree{
+class AVLTree {
   constructor(){
     this.root = null;
   }
@@ -17,29 +17,31 @@ class AVLTree{
     if(this.root === null){
       this.root = newNode;
     } else {
-      this.insertNode(this.root, newNode);
+      this.insertNode(this.root, key);
     }
   }
 
-  insertNode(node, newNode){
-    if(newNode.key < node.key){
-      node.left = this.insertNode(node.left, newNode);
+  insertNode(node, element){
+    if(node == null){
+      node = new Node(element);
+    } else if(element < node.key){
+      node.left = this.insertNode(node.left, element);
 
       if(node.left !== null){
         if(this.balanceFactor(node.left, node.right) > 1) {
-          if (newNode.key < node.left.key) {
+          if (element < node.left.key) {
             node = this.rotationLL(node);
           } else {
             node = this.rotationLR(node);
           }
         }
       }
-    } else if(newNode.key > node.key){
-      node.right = this.insertNode(node.right, newNode);
+    } else if(element > node.key){
+      node.right = this.insertNode(node.right, element);
 
       if(node.right !== null) {
         if(this.balanceFactor(node.right, node.left) > 1){
-          if (newNode.key > node.right.key){
+          if (element > node.right.key){
             node = this.rotationRR(node);
           } else {
             node = this.rotationRL(node);
@@ -47,7 +49,7 @@ class AVLTree{
         }
       }
     }
-    return node;
+    return this.root = node;
   }
 
   balanceFactor(nodeA, nodeB){
@@ -85,6 +87,25 @@ class AVLTree{
     node.right = this.rotationLL(node.right);
     return this.rotationRR(node);
   }
+
+  preOrderTraverse(){
+    return this.preOrderTraverseNode(this.root);
+  }
+
+  preOrderTraverseNode(node){
+    let nodeKeys = [];
+
+    if(node){
+      nodeKeys.push(node.key);
+      nodeKeys.push(this.preOrderTraverseNode(node.left));
+      nodeKeys.push(this.preOrderTraverseNode(node.right));
+    }
+
+    nodeKeys = [].concat.apply([], nodeKeys);
+
+    return nodeKeys;
+  }
+
 }
 
 module.exports = AVLTree;
