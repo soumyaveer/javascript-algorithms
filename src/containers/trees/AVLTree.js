@@ -49,7 +49,8 @@ class AVLTree {
         }
       }
     }
-    return this.root = node;
+    this.root = node;
+    return this.root;
   }
 
   balanceFactor(nodeA, nodeB){
