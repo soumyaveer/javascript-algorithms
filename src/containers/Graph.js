@@ -21,6 +21,12 @@ class Graph{
     this.vertices.push(vertex);
     this.adjList.set(vertex, []);
   }
+
+  //adds edges to the vertices of the graph
+  addEdge(vertexA, vertexB){
+    this.adjList.get(vertexA).push(vertexB);
+    this.adjList.get(vertexB).push(vertexA);
+  }
 }
 
 module.exports = Graph;
