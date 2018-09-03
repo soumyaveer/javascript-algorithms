@@ -105,7 +105,7 @@ describe('delete', () => {
     dictionary.delete("Frodo");
 
     expect(dictionary.size()).toBe(3);
-    expect(dictionary.keys()).toMatchObject(["Legolas", "Aragorn"]);
+    expect(dictionary.keys()).toMatchObject(["Gandalf", "Legolas", "Aragorn"]);
     expect(dictionary.values()).toMatchObject(
       ["gandalf_the_grey@wizard.com",
         "legolas@elf.com",

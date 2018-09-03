@@ -64,6 +64,14 @@ class Dictionary{
     return this.has(key) ? this.items[key] : undefined ;
   }
 
+  // removes an element from the dictionary
+  delete(key){
+    if(this.has(key)){
+      delete this.items[key];
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = Dictionary;
