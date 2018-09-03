@@ -180,3 +180,22 @@ describe('keys', () => {
     expect(dictionary.keys()).toMatchObject(["Gandalf", "Legolas", "Aragorn", "Frodo"]);
   });
 });
+
+describe('values', () => {
+  test('returns an array of all values of the dictionary', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+    dictionary.set("Aragorn", "strider@gondor.com");
+    dictionary.set("Frodo", "frodo_baggins@shire.com");
+
+    expect(dictionary.values()).toMatchObject(
+      ["gandalf_the_grey@wizard.com",
+        "legolas@elf.com",
+        "strider@gondor.com",
+        "frodo_baggins@shire.com"
+      ]
+    );
+  });
+});
