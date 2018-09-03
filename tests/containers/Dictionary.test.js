@@ -138,3 +138,19 @@ describe('get', () => {
     expect(dictionary.get('Legolas')).toBe("legolas@elf.com");
   });
 });
+
+describe('clear' , () => {
+  test('removes all items from the dictionary', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+
+    expect(dictionary.size()).toBe(2);
+    expect(dictionary.isEmpty()).toBe(false);
+
+    dictionary.clear();
+
+    expect(dictionary.isEmpty()).toBe(true);
+  });
+});
