@@ -124,3 +124,17 @@ describe('has', () =>{
     expect(dictionary.has("Sauron")).toBe(false);
   });
 });
+
+describe('get', () => {
+  test('returns the specific value searched by the key', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+    dictionary.set("Aragorn", "strider@gondor.com");
+    dictionary.set("Frodo", "frodo_baggins@shire.com");
+
+    expect(dictionary.size()).toBe(4);
+    expect(dictionary.get('Legolas')).toBe("legolas@elf.com");
+  });
+});
