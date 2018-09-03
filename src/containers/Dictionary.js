@@ -53,6 +53,11 @@ class Dictionary{
   has(key){
     return key in this.items;
   }
+
+  // empties the dictionary
+  clear(){
+    this.items = {};
+  }
 }
 
 module.exports = Dictionary;
