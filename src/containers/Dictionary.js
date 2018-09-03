@@ -7,9 +7,8 @@ class Dictionary{
   // returns the size of Dictionary
   size(){
     let size = 0;
-    let key;
 
-    for(key in this.items){
+    for(let key in this.items){
       if(this.items.hasOwnProperty(key)){
         ++size;
       }
@@ -30,13 +29,22 @@ class Dictionary{
 
   keys(){
     let keys = [];
-    let key;
 
-    for(key in this.items) {
+    for(let key in this.items) {
       keys.push(key);
     }
 
     return keys;
+  }
+
+  values(){
+    let values = [];
+
+    for(let key in this.items) {
+      values.push(this.items[key]);
+    }
+
+    return values;
   }
 }
 
