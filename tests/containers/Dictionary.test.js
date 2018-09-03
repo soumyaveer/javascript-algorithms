@@ -154,3 +154,16 @@ describe('clear' , () => {
     expect(dictionary.isEmpty()).toBe(true);
   });
 });
+
+describe('size', () => {
+  test('returns number iof elements in the dictionary', () => {
+    let dictionary = new Dictionary();
+
+    expect(dictionary.size()).toBe(0);
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+
+    expect(dictionary.size()).toBe(2);
+  });
+});
