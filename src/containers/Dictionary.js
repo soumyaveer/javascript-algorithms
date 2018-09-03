@@ -27,6 +27,17 @@ class Dictionary{
   set(key, value){
     this.items[key] = value;
   }
+
+  keys(){
+    let keys = [];
+    let key;
+
+    for(key in this.items) {
+      keys.push(key);
+    }
+
+    return keys;
+  }
 }
 
 module.exports = Dictionary;
