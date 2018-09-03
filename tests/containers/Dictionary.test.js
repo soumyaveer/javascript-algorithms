@@ -1,5 +1,21 @@
 const Dictionary = require('../../src/containers/Dictionary');
 
+describe('isEmpty', () => {
+  test('returns true if dictionary is empty', () => {
+    let dictionary = new Dictionary();
+
+    expect(dictionary.isEmpty()).toBe(true);
+  });
+
+  test('returns false if dictionary is not empty', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+
+    expect(dictionary.isEmpty()).toBe(false);
+  });
+});
+
 describe('set', () => {
   test('adds a new item to the dictionary, when dictionary is empty', () => {
     let dictionary = new Dictionary();
