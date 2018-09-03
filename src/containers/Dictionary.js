@@ -16,10 +16,16 @@ class Dictionary{
     }
     return size;
   }
+
   // returns true if dictionary is empty
   isEmpty(){
     // returns isEmpty is true when size is 0 returns false for any other number
     return !this.size();
+  }
+
+  // adds a new item to the dictionary
+  set(key, value){
+    this.items[key] = value;
   }
 }
 
