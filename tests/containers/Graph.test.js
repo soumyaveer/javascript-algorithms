@@ -67,6 +67,6 @@ describe('addEdge', () => {
 
     expect(graph.isEmpty()).toBe(false);
     expect(graph.numberOfVertices()).toBe(3);
-    expect(graph.toString()).toBe("A -> B C \nB -> A \nC -> A\n");
+    expect(graph.toString()).toBe("A -> B C \nB -> A \nC -> A \n");
   });
 });

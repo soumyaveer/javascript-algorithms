@@ -27,6 +27,21 @@ class Graph{
     this.adjList.get(vertexA).push(vertexB);
     this.adjList.get(vertexB).push(vertexA);
   }
+
+  // prints the graph
+  toString(){
+    let str = '';
+    let neighbors;
+    for(let i = 0; i< this.vertices.length; i++) {
+      str += this.vertices[i] + ' -> ';
+      neighbors = this.adjList.get(this.vertices[i]);
+      for(let j = 0; j < neighbors.length; j++){
+        str += neighbors[j] + ' ';
+      }
+      str += '\n';
+    }
+    return str;
+  }
 }
 
 module.exports = Graph;
