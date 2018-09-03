@@ -27,6 +27,7 @@ class Dictionary{
     this.items[key] = value;
   }
 
+  // returns an array of keys in the dictionary
   keys(){
     let keys = [];
 
@@ -37,6 +38,7 @@ class Dictionary{
     return keys;
   }
 
+  //returns an array of values in the dictionary
   values(){
     let values = [];
 
