@@ -48,6 +48,11 @@ class Dictionary{
 
     return values;
   }
+
+  // returns true if the key is present in the dictionary else returns false
+  has(key){
+    return key in this.items;
+  }
 }
 
 module.exports = Dictionary;
