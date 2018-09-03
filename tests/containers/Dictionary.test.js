@@ -98,3 +98,29 @@ describe('delete', () => {
     );
   });
 });
+
+describe('has', () =>{
+  test('returns true if the key exists in the dictionary', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+    dictionary.set("Aragorn", "strider@gondor.com");
+    dictionary.set("Frodo", "frodo_baggins@shire.com");
+
+    expect(dictionary.size()).toBe(4);
+    expect(dictionary.has("Aragorn")).toBe(true);
+  });
+
+  test('returns false if the key exists in the dictionary', () => {
+    let dictionary = new Dictionary();
+
+    dictionary.set("Gandalf", "gandalf_the_grey@wizard.com");
+    dictionary.set("Legolas", "legolas@elf.com");
+    dictionary.set("Aragorn", "strider@gondor.com");
+    dictionary.set("Frodo", "frodo_baggins@shire.com");
+
+    expect(dictionary.size()).toBe(4);
+    expect(dictionary.has("Sauron")).toBe(false);
+  });
+});
