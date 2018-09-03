@@ -58,6 +58,12 @@ class Dictionary{
   clear(){
     this.items = {};
   }
+
+  // searches for the key and returns the value for that key
+  get(key){
+    return this.has(key) ? this.items[key] : undefined ;
+  }
+
 }
 
 module.exports = Dictionary;
