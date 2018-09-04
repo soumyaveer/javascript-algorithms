@@ -91,7 +91,7 @@ describe('breadthFirstSearch', () => {
     graph.addEdge('D', 'G');
     graph.addEdge('D', 'H');
     graph.addEdge('B', 'E');
-    graph.addEdge('B', 'F')
+    graph.addEdge('B', 'F');
     graph.addEdge('E', 'I');
 
     expect(graph.isEmpty()).toBe(false);
