@@ -1,4 +1,5 @@
 const Dictionary = require('../../src/containers/Dictionary');
+const Queue = require('../../../src/containers/queues/Queue');
 
 class Graph{
   constructor(){
@@ -41,6 +42,11 @@ class Graph{
       str += '\n';
     }
     return str;
+  }
+
+  // traverse the graph - Breadth First Search (BFS)
+  breadthFirstSearch(){
+
   }
 }
 
