@@ -44,10 +44,47 @@ class Graph{
     return str;
   }
 
-  // traverse the graph - Breadth First Search (BFS)
-  breadthFirstSearch(){
+  /* Traverse Graph -
+     1. BFS - Queues. Width wise search.
+     2. DFS - Stacks. Height Wise search.
+ */
+
+  /* Node colors:
+     1. white -> undiscovered
+     2. grey -> discovered
+     3. black -> explored
+
+     Initialize all the vertices of graph to white before starting BFS or DFS.
+   */
+
+  initializeColor(){
+    let color = [];
+    for(let i = 0; i < this.vertices.length; i++){
+      color[this.vertices[i]] = 'white';
+    }
+    return color;
+  }
+
+  /* Algorithm - BFS:
+     1. Create queue
+     2. Mark starting vertex(v) as discovered (grey).
+     3. Enqueue v to queue
+     4. Loop through queue ,while queue is not empty:
+        4.1 Dequeue first node from queue, let's call it u.
+        4.2 Mark u as discovered (grey). The undiscovered nodes are marked white.
+        4.3 Find it's neighbors
+        4.4 Loop through each neighbor. We will call each element w:
+            4.4.1 Check is the neighbor(w) is undiscovered (white)
+                  4.4.1.1 Mark it(w) as discovered (grey)
+                  4.4.1.2 Enqueue the neighbor (w)
+        4.5 Mark u as explored(black);
+        4.6 Concatenate the result to the queue
+   */
+  breadthFirstSearch(vertex){
 
   }
+
+
 }
 
 module.exports = Graph;
