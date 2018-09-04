@@ -1,5 +1,5 @@
 const Dictionary = require('../../src/containers/Dictionary');
-const Queue = require('../../../src/containers/queues/Queue');
+const Queue = require('../../src/containers/queues/Queue');
 
 class Graph{
   constructor(){
@@ -81,10 +81,30 @@ class Graph{
         4.6 Concatenate the result to the queue
    */
   breadthFirstSearch(vertex){
+    let color = this.initializeColor();
+    let dequeueNode;
+    let neighbours = [];
+    let visitedVertices = [];
 
+    let queue = new Queue();
+    queue.enqueue(vertex);
+
+    while(!queue.isEmpty()){
+      dequeueNode = queue.dequeue();
+      neighbours = this.adjList.get(dequeueNode);
+      color[dequeueNode] = 'grey';
+      for(let i = 0; i < neighbours.length; i++){
+        if(color[neighbours[i]] === 'white'){
+          color[neighbours[i]] = 'grey';
+          queue.enqueue(neighbours[i]);
+        }
+      }
+      color[dequeueNode] = 'black';
+      visitedVertices.push(dequeueNode);
+    }
+
+    return visitedVertices;
   }
-
-
 }
 
 module.exports = Graph;
