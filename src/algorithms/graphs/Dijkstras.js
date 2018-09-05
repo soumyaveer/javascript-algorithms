@@ -58,4 +58,4 @@ class Dijkstras{
   }
 }
 
-modeule.exports = Dijkstras;
+module.exports = Dijkstras;
