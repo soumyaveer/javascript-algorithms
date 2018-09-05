@@ -83,7 +83,7 @@ class Graph{
   breadthFirstSearch(vertex){
     let color = this.initializeColor();
     let dequeueNode;
-    let neighbours = [];
+    let neighbors = [];
     let visitedVertices = [];
 
     let queue = new Queue();
@@ -91,12 +91,12 @@ class Graph{
 
     while(!queue.isEmpty()){
       dequeueNode = queue.dequeue();
-      neighbours = this.adjList.get(dequeueNode);
+      neighbors = this.adjList.get(dequeueNode);
       color[dequeueNode] = 'grey';
-      for(let i = 0; i < neighbours.length; i++){
-        if(color[neighbours[i]] === 'white'){
-          color[neighbours[i]] = 'grey';
-          queue.enqueue(neighbours[i]);
+      for(let i = 0; i < neighbors.length; i++){
+        if(color[neighbors[i]] === 'white'){
+          color[neighbors[i]] = 'grey';
+          queue.enqueue(neighbors[i]);
         }
       }
       color[dequeueNode] = 'black';
@@ -104,6 +104,41 @@ class Graph{
     }
 
     return visitedVertices;
+  }
+
+  /* Algorithm - DFS:
+    1. Mark vertex(v) as discovered(grey)
+    2. Get neighbors of v. Calling each neighbor w
+    3. loop through neighbors:
+       3.1 if neighbor is undiscovered (white)
+           3.1.1 Visit  vertex w
+    4. Mark u as explored (black)
+
+    Note: recursion uses stack
+   */
+
+  depthFirstSearch(){
+    let color = this.initializeColor();
+    let visitedVertices = [];
+
+    for(let i = 0; i < this.vertices.length; i++){
+      if(color[this.vertices[i]] === 'white'){
+        this.depthFirstVisit(this.vertices[i], color, visitedVertices);
+      }
+    }
+  return visitedVertices;
+  }
+
+  depthFirstVisit(vertex, color, visitedVertices){
+    color[vertex] = 'grey';
+    visitedVertices.push(vertex);
+    let neighbors = this.adjList.get(vertex);
+    for(let i = 0; i < neighbors.length; i++){
+      if(color[neighbors[i]] === 'white'){
+        this.depthFirstVisit(neighbors[i], color, visitedVertices);
+      }
+    }
+    color[vertex] = 'black';
   }
 }
 
