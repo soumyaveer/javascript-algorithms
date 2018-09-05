@@ -15,8 +15,32 @@ class Dijkstras{
     5. After all vertices are processed, return the shortest path distance.
   */
 
-  shortestPath(sourceVertex){
+  shortestPath(source){
+    let distances = [];
+    let visitedVertices = [];
+    let size = this.graph.length;
+    // initialize distances as infinity and visitedVertices as false
 
+    for(let i = 0; i < size; i++){
+      distances[i] = Infinity;
+      visitedVertices[i] = false;
+    }
+
+    // min distance of source from itself is 0
+    distances[source] = 0;
+
+    for(let i = 0; i < size - 1; i++){
+      let minDistanceVertexIndex = this.findMinDistanceVertexIndex(distances, visitedVertices);
+
+      visitedVertices[minDistanceVertexIndex] = true;
+
+      for (let j = 0; j < size; j++){
+        if(!visitedVertices[j] && !this.graph[minDistanceVertexIndex][j] != 0 && distances[minDistanceVertexIndex] != Infinity && distances[minDistanceVertexIndex] + this.graph[minDistanceVertexIndex][j] < distances[j]){
+          distances[j] = distances[minDistanceVertexIndex] + this.graph[minDistanceVertexIndex][j];
+        }
+      }
+    }
+    return distances;
   }
 }
 
