@@ -35,12 +35,26 @@ class Dijkstras{
       visitedVertices[minDistanceVertexIndex] = true;
 
       for (let j = 0; j < size; j++){
-        if(!visitedVertices[j] && !this.graph[minDistanceVertexIndex][j] != 0 && distances[minDistanceVertexIndex] != Infinity && distances[minDistanceVertexIndex] + this.graph[minDistanceVertexIndex][j] < distances[j]){
+        if(!visitedVertices[j] && this.graph[minDistanceVertexIndex][j] != 0 && distances[minDistanceVertexIndex] != Infinity && distances[minDistanceVertexIndex] + this.graph[minDistanceVertexIndex][j] < distances[j]){
           distances[j] = distances[minDistanceVertexIndex] + this.graph[minDistanceVertexIndex][j];
         }
       }
     }
     return distances;
+  }
+
+
+  findMinDistanceVertexIndex(distances, visitedVertices){
+    let minVertex = Infinity;
+    let minIndex = -1;
+
+    for(let i = 0; i < distances.length; i++){
+      if(!visitedVertices[i] && distances[i] <= minVertex){
+        minVertex = distances[i];
+        minIndex = i;
+      }
+    }
+    return minIndex;
   }
 }
 
