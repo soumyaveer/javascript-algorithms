@@ -8,8 +8,8 @@ class Prims {
 
        1     6
     A --- D --- E                    Result: AD, CD, BC, CF, EF
-    |   / |   / |                    Time Complexity:  O(Elog(V))
-  3 | 3/ 1|  /5 | 2                  Space complexity: O(E + V)
+    |   / |   / |
+  3 | 3/ 1|  /5 | 2
     | /   | /   |
     B --- C --- F
        1     4
@@ -53,6 +53,52 @@ class Prims {
           3.3.2 Set the new cost of MST (minimum cost)
    4. return the result (parent) confining MST after all the vertices are processed.
    */
+
+  createMST(){
+    let keys = [];
+    let visitedVertices = [];
+    let parents = [];
+    let size = this.graph.length;
+
+    // initialize all keys as INF and visitedVertices as false
+    for(let i = 0; i < size; i++){
+      keys[i] = Infinity;
+      visitedVertices[i] = false;
+    }
+
+    // set first key as 0 and parent as -1
+    keys[0] = 0;
+    parents[0] = -1;
+
+    //Loop through all vertices
+    for(let i = 0; i < size - 1; i++){
+      let minKeyIndex = this.minKey(keys, visitedVertices);
+      visitedVertices[minKeyIndex] = true;
+
+      for(let j = 0; j < size; j++){
+        if(this.graph[minKeyIndex][j] && visitedVertices[j] == false && this.graph[minKeyIndex][j] < keys[j]){
+          parents[j] = minKeyIndex;
+          keys[j] = this.graph[minKeyIndex][j];
+        }
+      }
+    }
+    // return parents;
+    return keys;
+  }
+
+
+  minKey(keys, visitedVertices){
+    let minKey = Infinity;
+    let minIndex = -1;
+
+    for(let i = 0; i < keys.length; i++){
+      if(!visitedVertices[i] && keys[i] <= minKey){
+        minKey = keys[i];
+        minIndex = i;
+      }
+    }
+    return minIndex;
+  }
 }
 
 
