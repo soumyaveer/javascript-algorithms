@@ -28,5 +28,4 @@ describe('sort', () => {
 
     expect(bubble.sort()).toMatchObject([-4, -3, -2, -1, Infinity]);
   });
-
 });

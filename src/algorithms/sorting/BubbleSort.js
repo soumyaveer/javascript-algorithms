@@ -15,8 +15,7 @@ class BubbleSort{
         }
       }
     }
-
-    return this.elements
+    return this.elements;
   }
 }
 
