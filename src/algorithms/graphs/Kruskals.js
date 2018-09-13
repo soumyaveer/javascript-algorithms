@@ -4,7 +4,7 @@ class Kruskals{
   }
 
   /* Kruskal's algorithm finds the Minimum Spanning Tree.
-    How it works?  We will use Disjoint sets for this algorithm - findSet and Union operations majorly.
+    How it works?  Disjoint sets are used for this algorithm - findSet and Union operations majorly.
 
        1     6
     A --- D --- E                    Result: AD, BC, CD, EF, CF
@@ -29,8 +29,70 @@ class Kruskals{
 
    Algorithm:
    ----------
-
+   1. Loop through MST
+      1.1 Find edge with min cost
+      1.2 Verify is the edge is already taken by MST to avoid cycle
+      1.3 If edges are not same, add it to MST
+      1.4 Remove duplicate edges
+   2. return MST
    */
+
+  findMST(){
+    let parent = [];
+    let graphCost = [];
+    graphCost =  this.clone(this.graph);
+    let size = this.graph.length;
+    let minCost;
+    let setA, setB;
+    let nodeEdges = 0;
+
+    while (nodeEdges < size - 1){
+      //find the edge of the minimum cost
+      for(let i = 0, minCost = Infinity; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+          if(graphCost[i][j] < minCost) {
+            minCost = graphCost[i][j];
+            setA = i;
+            setB = j;
+          }
+        }
+      }
+
+      // verify if the edge is already taken by MST
+      setA = this.find(setA, parent);
+      setB = this.find(setB, parent);
+
+      // if edges are not same, add it to MST
+      if(this.union(setA, setB, parent)){
+        nodeEdges++;
+      }
+
+      //remove duplicate edges
+      graphCost[setA][setB]  = Infinity;
+    }
+    return parent;
+  }
+
+  clone(matrix){
+    let duplicateMatrix = [];
+    matrix.forEach((column) => duplicateMatrix.push(column));
+    return duplicateMatrix;
+  }
+
+  find(element, array){
+    while(array[element]){
+      element = array[element];
+    }
+    return element;
+  }
+
+  union(setA, setB, array){
+    if(setA !== setB){
+      array[setB] = setA;
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = Kruskals;
