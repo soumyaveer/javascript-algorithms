@@ -3,6 +3,13 @@ class BubbleSort{
     this.elements = elements;
   }
 
+  /* Algorithm: Compares every two adjacent items and swaps if the first is bigger than the second.
+     1.loop from 0 to n
+       1.2 loop from  0 to n-1
+          1.2.1 compare two adjacent elements
+                1.2.1.1 if first is greater than second, swap the two elements
+     2. return the result
+   */
   sort(){
     let length = this.elements.length;                //O(1)
 

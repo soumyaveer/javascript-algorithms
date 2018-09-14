@@ -3,6 +3,17 @@ class SelectionSort{
     this.elements = elements;
   }
 
+  /* Algorithm (in-place Selection sort): select the smallest element from the array and place it to the beginning of an array.
+    1. loop from 0 to n-1 (i)
+      1.1. assume that first element is the minimum value
+      1.2 loop from i to n (j)
+          1.2.1 compare the assumed smallest value to the current value
+                1.2.1.1 if currentValue is smallest the save it as minIndex
+       1.3 compare if the original assumed value is not equal to minimum value, that means that minimum value is the smallest value.
+          1.2.1 swap original assumed min value and current min value
+     2. return sorted list
+   */
+
   sort(){
     let minIndex;
     let length = this.elements.length;                    //O(1)
