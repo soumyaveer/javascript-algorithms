@@ -1,15 +1,15 @@
 class MergeSort{
-  constructor(elements){
-    this.elements = elements;
-  }
 
-  sort(){
-    if(this.elements.length <= 1) {
-      return this.elements;
+  sort(elements){
+    let length = elements.length;
+    let mid = length/2;
+
+    if(length <= 1) {
+      return elements;
     }
 
-    let leftHalf = this.elements.slice(0, this.elements.length/2);
-    let rightHalf = this.elements.slice(this.elements.length/2);
+    let leftHalf = elements.slice(0, mid);
+    let rightHalf = elements.slice(mid);
     let leftSorted = this.sort(leftHalf);
     let rightSorted = this.sort(rightHalf);
 
@@ -32,6 +32,7 @@ class MergeSort{
         result.push(right[rPointer++]);
       }
     }
+    return result;
   }
 }
 
