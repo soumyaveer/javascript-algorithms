@@ -102,3 +102,20 @@ describe('has', () => {
     expect(set.has(1)).toBe(false);
   });
 });
+
+describe('clear', () => {
+  test('removes all the elements from the set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+
+    set.clear();
+
+    expect(set.size()).toBe(0);
+    expect(set.values()).toMatchObject([]);
+  });
+});
