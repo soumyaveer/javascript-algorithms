@@ -43,4 +43,17 @@ class QuickSort{
     return elements;
   }
 
+  partition(elements, low, high){
+    let pivot = high;
+    let pivotLocation = low;
+
+    for(let i = low; i <= high; i++){
+      if(elements[i] <= pivot){
+        this.swap(elements, pivotLocation, i);
+        pivotLocation++;
+      }
+    }
+    this.swap(elements, pivotLocation, high);
+    return elements;
+  }
 }
