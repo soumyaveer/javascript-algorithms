@@ -6,7 +6,7 @@ describe('add', () => {
 
     expect(set.size()).toBe(0);
 
-    set.add(1);
+    expect(set.add(1)).toBe(true);
 
     expect(set.size()).toBe(1);
     expect(set.has(1)).toBe(true);
@@ -14,12 +14,24 @@ describe('add', () => {
 
   test('adds a new item to the set, when set is not empty', () => {
     let set = new Set();
-    set.add(1);
-    set.add(2);
-    set.add(3);
+
+    expect(set.add(1)).toBe(true);
+    expect(set.add(2)).toBe(true);
+    expect(set.add(3)).toBe(true);
 
     expect(set.size()).toBe(3);
     expect(set.values()).toMatchObject(["1", "2", "3"]);
+  });
+
+  test('does not add a new item to the set, when set already has that item', () => {
+    let set = new Set();
+
+    expect(set.add(1)).toBe(true);
+    expect(set.add(2)).toBe(true);
+    expect(set.add(2)).toBe(false);
+
+    expect(set.size()).toBe(2);
+    expect(set.values()).toMatchObject(["1", "2"]);
   });
 });
 
