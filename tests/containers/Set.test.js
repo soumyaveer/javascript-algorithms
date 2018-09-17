@@ -165,3 +165,32 @@ describe('values', () => {
     expect(set.values()).toMatchObject([]);
   });
 });
+
+describe('union', () => {
+  test('returns a new set with the elements of both given sets', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(4);
+    setB.add(5);
+    setB.add(6);
+
+    let unionAB = setA.union(setB);
+    expect(unionAB.values()).toMatchObject([1, 2, 3, 4, 5, 6]);
+  });
+
+  test('returns a new set with the elements of both given sets, when one set in empty', () => {
+    let setA = new Set();
+
+    let setB = new Set();
+    setB.add(4);
+    setB.add(5);
+    setB.add(6);
+
+    let unionAB = setA.union(setB);
+    expect(unionAB.values()).toMatchObject([4, 5, 6]);
+  });
+});
