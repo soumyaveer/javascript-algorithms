@@ -8,7 +8,7 @@ class Set{
   }
 
   has(value){
-    return value in this.items;
+    return this.items.hasOwnProperty(value);
   }
 }
 
