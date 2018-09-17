@@ -81,18 +81,20 @@ class Set{
       3.1 add the values of array to unionAB
     4. repeat steps 2, 3 for setB
     5. return unionAB
+
+    Time Complexity: F(n) = O(n)
    */
 
   union(otherSet){
     let unionSet = new Set();
 
     let values = this.values();
-    values.forEach((value) =>{
+    values.forEach((value) =>{      //O(n)
       unionSet.add(value);
     });
 
     values = otherSet.values();
-    values.forEach((value) => {
+    values.forEach((value) => {    //O(n)
       unionSet.add(value);
     });
 
@@ -106,12 +108,14 @@ class Set{
       3.1 check if setB has the value
           3.1.1 if it does, add it to the intersectionSet.
     4. return intersectionSet
+
+    Time Complexity: F(n) = O(n)
    */
   intersection(otherSet){
     let intersectionSet = new Set();
     let values = this.values();
 
-    values.forEach((value) =>{
+    values.forEach((value) =>{      //O(n)
       if(otherSet.has(value)){
         intersectionSet.add(value);
       }
@@ -127,13 +131,15 @@ class Set{
       3.1 if setB does have value
           3.1.1 add the value to differenceSet
     4. return differenceSet
+
+    Time Complexity: F(n) = O(n)
    */
 
   difference(otherSet){
     let differenceSet = new Set();
     let values = this.values();
 
-    values.forEach((value) => {
+    values.forEach((value) => {   //O(n)
       if(!otherSet.has(value)){
         differenceSet.add(value);
       }
@@ -151,6 +157,8 @@ class Set{
           2.2.1 check if otherSet does not have value
                 2.2.1.1 if true, return false
     3. return true
+
+    Time Complexity: F(n) = O(n)
    */
 
   subsetOf(otherSet){
@@ -159,7 +167,7 @@ class Set{
     } else {
       let values = this.values();
 
-      for(let i = 0; i < values.length; i++){
+      for(let i = 0; i < values.length; i++){   //O(n)
         if(!otherSet.has(values[i])){
           return false;
         }
