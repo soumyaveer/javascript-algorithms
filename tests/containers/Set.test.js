@@ -70,3 +70,35 @@ describe('delete', () => {
     expect(set.values()).toMatchObject(['1', '2']);
   });
 });
+
+
+describe('has', () => {
+  test('returns true if the value exists in the Set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.has(2)).toBe(true);
+  });
+
+  test('returns false if the value does not exist in the Set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.has(5)).toBe(false);
+  });
+
+  test('returns false if the Set is a null set', () => {
+    let set = new Set();
+
+    expect(set.size()).toBe(0);
+    expect(set.has(1)).toBe(false);
+  });
+});
