@@ -38,6 +38,41 @@ class Set{
     }
     return count;
   }
+
+  /*values(): returns an array of values of the set.
+    1. initialize an empty array.
+    2. loop through the set
+      2.1 push value of set to array
+    3. return array
+   */
+  values(){
+    let values = [];
+
+    for(let key in this.items){
+      values.push(this.items[key]);
+    }
+
+    return values;
+  }
+
+  //clear(): removes all elements from the set
+  clear(){
+    this.items = {};
+  }
+
+  /* delete(value): removes the value from the set
+     1. check if set has the value that needs to be deleted.
+       1.1 if yes, delete the value from the set
+       1.2 return true
+     2. return false, if the value was not found or the above condition failed.
+   */
+  delete(value){
+    if(this.has(value)){
+      delete this.items[value];
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = Set;

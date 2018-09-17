@@ -20,7 +20,7 @@ describe('add', () => {
     expect(set.add(3)).toBe(true);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(["1", "2", "3"]);
+    expect(set.values()).toMatchObject([1, 2, 3]);
   });
 
   test('does not add a new item to the set, when set already has that item', () => {
@@ -31,7 +31,7 @@ describe('add', () => {
     expect(set.add(2)).toBe(false);
 
     expect(set.size()).toBe(2);
-    expect(set.values()).toMatchObject(["1", "2"]);
+    expect(set.values()).toMatchObject([1, 2]);
   });
 });
 
@@ -43,12 +43,12 @@ describe('delete', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
 
-    set.remove(1);
+    set.delete(1);
 
     expect(set.size()).toBe(2);
-    expect(set.values()).toMatchObject(['2', '3']);
+    expect(set.values()).toMatchObject([2, 3]);
   });
 
   test('removes the value from the middle of the set', () => {
@@ -58,12 +58,12 @@ describe('delete', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
 
-    set.remove(2);
+    set.delete(2);
 
     expect(set.size()).toBe(2);
-    expect(set.values()).toMatchObject(['1', '3']);
+    expect(set.values()).toMatchObject([1, 3]);
   });
 
 
@@ -74,12 +74,12 @@ describe('delete', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
 
-    set.remove(3);
+    set.delete(3);
 
     expect(set.size()).toBe(2);
-    expect(set.values()).toMatchObject(['1', '2']);
+    expect(set.values()).toMatchObject([1, 2]);
   });
 });
 
@@ -92,7 +92,7 @@ describe('has', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
     expect(set.has(2)).toBe(true);
   });
 
@@ -103,7 +103,7 @@ describe('has', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
     expect(set.has(5)).toBe(false);
   });
 
@@ -123,7 +123,7 @@ describe('clear', () => {
     set.add(3);
 
     expect(set.size()).toBe(3);
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
 
     set.clear();
 
@@ -156,7 +156,7 @@ describe('values', () => {
     set.add(2);
     set.add(3);
 
-    expect(set.values()).toMatchObject(['1', '2', '3']);
+    expect(set.values()).toMatchObject([1, 2, 3]);
   });
 
   test('returns empty array if set is empty', () => {
