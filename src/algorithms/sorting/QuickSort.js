@@ -69,3 +69,5 @@ class QuickSort{
     return array;
   }
 }
+
+module.exports = QuickSort;
