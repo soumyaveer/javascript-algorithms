@@ -207,7 +207,7 @@ describe('intersection', () =>{
     setB.add(3);
     setB.add(4);
 
-    let intersectionAB = setA.union(setB);
+    let intersectionAB = setA.intersection(setB);
     expect(intersectionAB.values()).toMatchObject([2, 3]);
   });
 
@@ -222,7 +222,7 @@ describe('intersection', () =>{
     setB.add(5);
     setB.add(6);
 
-    let intersectionAB = setA.union(setB);
+    let intersectionAB = setA.intersection(setB);
     expect(intersectionAB.values()).toMatchObject([]);
   });
 });

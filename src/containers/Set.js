@@ -83,7 +83,7 @@ class Set{
     5. return unionAB
    */
 
-  union(setB){
+  union(otherSet){
     let unionSet = new Set();
 
     let values = this.values();
@@ -91,12 +91,33 @@ class Set{
       unionSet.add(value);
     });
 
-    values = setB.values();
+    values = otherSet.values();
     values.forEach((value) => {
       unionSet.add(value);
     });
 
     return unionSet;
+  }
+
+  /*intersection(otherSet): returns the common elements between two sets.
+    1. create a new set intersectionSet.
+    2. initialize values with the values of set A
+    3. loop through values array
+      3.1 check if setB has the value
+          3.1.1 if it does, add it to the intersectionSet.
+    4. return intersectionSet
+   */
+  intersection(otherSet){
+    let intersectionSet = new Set();
+    let values = this.values();
+
+    values.forEach((value) =>{
+      if(otherSet.has(value)){
+        intersectionSet.add(value);
+      }
+    });
+
+    return intersectionSet;
   }
 }
 
