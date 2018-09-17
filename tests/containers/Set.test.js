@@ -273,3 +273,31 @@ describe('difference', () => {
     expect(setDifference.values()).toMatchObject([]);
   });
 });
+
+describe('subset', () => {
+  test('return true is one set is a subset of another set', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(2);
+    setB.add(3);
+
+    expect(setA.subset(setB)).toBe(true);
+  });
+
+  test('return false is one set is not a subset of another set', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(4);
+    setB.add(5);
+
+    expect(setA.subset(setB)).toBe(false);
+  });
+});
