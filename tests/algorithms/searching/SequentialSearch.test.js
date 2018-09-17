@@ -16,4 +16,12 @@ describe('search', () => {
 
     expect(sequential.search(searchKey)).toBe(false);
   });
+
+  test('returns false if array is empty', () => {
+    let elements = [];
+    let searchKey = 8;
+    let sequential = new SequentialSearch(elements);
+
+    expect(sequential.search(searchKey)).toBe(false);
+  });
 });

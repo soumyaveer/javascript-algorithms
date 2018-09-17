@@ -10,6 +10,17 @@ class SequentialSearch{
             1.1.1 return true
      2. return false
    */
+
+  search(searchKey){
+    let length = this.elements.length;
+
+    for(let i = 0; i < length; i++){
+      if(this.elements[i] === searchKey){
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 module.exports = SequentialSearch;
