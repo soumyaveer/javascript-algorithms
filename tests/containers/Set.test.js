@@ -136,3 +136,20 @@ describe('size', () => {
     expect(set.size()).toBe(3);
   });
 });
+
+describe('values', () => {
+  test('returns array of all set values', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+  });
+
+  test('returns empty array if set is empty', () => {
+    let set = new Set();
+
+    expect(set.values()).toMatchObject([]);
+  });
+});
