@@ -22,7 +22,7 @@ class BinarySearch{
     let lowIndex = 0;
     let highIndex = this.elements.length - 1;
 
-    while(lowIndex <= highIndex){
+    while(lowIndex <= highIndex){                               //O(log(n))
       let midIndex = Math.floor((lowIndex + highIndex)/2);
       let midElement = this.elements[midIndex];
 
@@ -39,3 +39,7 @@ class BinarySearch{
 }
 
 module.exports = BinarySearch;
+
+/* Time Complexity: Worst case:
+    F(n) = O(log(n))
+ */
