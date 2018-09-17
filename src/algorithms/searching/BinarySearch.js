@@ -4,6 +4,7 @@ class BinarySearch{
   }
 
   /* Assumption: The array which is being searched is sorted
+     ----------
      Algorithm: Find the mid value in the sorted array. If low is less than mid value, search in left half on an array, otherwise we search the right of the array
      search(searchKey)
      1. initialize the low as 0. high as length - 1 and mid as (low + high)/2
@@ -16,6 +17,25 @@ class BinarySearch{
             2.3.1 return true
      3. return false
    */
+
+  search(searchKey){
+    let lowIndex = 0;
+    let highIndex = this.elements.length - 1;
+
+    while(lowIndex <= highIndex){
+      let midIndex = Math.floor((lowIndex + highIndex)/2);
+      let midElement = this.elements[midIndex];
+
+      if(midElement < searchKey){
+        lowIndex = midIndex + 1;
+      } else if(midElement > searchKey){
+        highIndex = midIndex - 1;
+      } else {
+        return true
+      }
+    }
+    return false;
+  }
 }
 
 module.exports = BinarySearch;
