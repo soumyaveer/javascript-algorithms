@@ -240,7 +240,7 @@ describe('difference', () => {
     setB.add(4);
 
     let setDifference = setA.difference(setB);
-    expect(setDifference.values()).toMatchObject([1])
+    expect(setDifference.values()).toMatchObject([1]);
   });
 
   test('returns the difference between two sets, when both sets have no common element', () => {
@@ -255,7 +255,7 @@ describe('difference', () => {
     setB.add(6);
 
     let setDifference = setA.difference(setB);
-    expect(setDifference.values()).toMatchObject([1, 2, 3])
+    expect(setDifference.values()).toMatchObject([1, 2, 3]);
   });
 
   test('returns the difference between two sets, when both sets have common element', () => {
@@ -270,6 +270,6 @@ describe('difference', () => {
     setB.add(3);
 
     let setDifference = setA.difference(setB);
-    expect(setDifference.values()).toMatchObject([])
+    expect(setDifference.values()).toMatchObject([]);
   });
 });

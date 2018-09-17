@@ -119,6 +119,28 @@ class Set{
 
     return intersectionSet;
   }
+
+  /*difference(otherSet): returns the elements in setA which are not in setB.
+    1. create differenceSet set
+    2. initialize values array with values of setA
+    3. loop through values array
+      3.1 if setB does have value
+          3.1.1 add the value to differenceSet
+    4. return differenceSet
+   */
+
+  difference(otherSet){
+    let differenceSet = new Set();
+    let values = this.values();
+
+    values.forEach((value) => {
+      if(!otherSet.has(value)){
+        differenceSet.add(value);
+      }
+    });
+
+    return differenceSet;
+  }
 }
 
 module.exports = Set;
