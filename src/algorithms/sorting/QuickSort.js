@@ -26,7 +26,7 @@ class QuickSort{
    */
 
   sort(elements, low, high){
-    if(low === undefined){                                        //Constant O(1)
+    if(low === undefined){
       low = 0;
     }
 
@@ -35,9 +35,9 @@ class QuickSort{
     }
 
     if(low < high){
-      let pivotIndex = this.partition(elements, low, high);      //Complexity of partition O(n)
+      let pivotIndex = this.partition(elements, low, high);
 
-      this.sort(elements, low, pivotIndex - 1);                   // n/2
+      this.sort(elements, low, pivotIndex - 1);                   // O(log(n))
       this.sort(elements, pivotIndex + 1, high);
     }
 
@@ -77,6 +77,5 @@ module.exports = QuickSort;
 
 /* Time Complexity Calculations:
     Worst Case:
-    F(n) = n + 2(n/2)
-         = O(n*log(n))
+    F(n) = O(n*log(n))
  */

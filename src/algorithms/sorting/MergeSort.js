@@ -27,19 +27,19 @@ class MergeSort{
 
 
   sort(elements){
-    let length = elements.length;                                 //O(1)
-    let mid = length/2;                                           //O(1
+    let length = elements.length;
+    let mid = length/2;
 
-    if(length <= 1) {                                             //O(1)
+    if(length <= 1) {
       return elements;
     }
 
     let leftHalf = elements.slice(0, mid);
     let rightHalf = elements.slice(mid);
-    let leftSorted = this.sort(leftHalf);                         //O(n/2)
+    let leftSorted = this.sort(leftHalf);                         //O(log n)
     let rightSorted = this.sort(rightHalf);
 
-    return this.merge(leftSorted, rightSorted);                   //O(n)
+    return this.merge(leftSorted, rightSorted);
   }
 
   merge(left, right){
@@ -66,6 +66,5 @@ module.exports = MergeSort;
 
 /* Time Complexity Calculations:
     Worst Case:
-    F(n) = n + 2(n/2)
-         = O(n*log(n))
+    F(n) = O(n*log(n))
  */
