@@ -23,5 +23,24 @@ class QuickSort{
       2. swap value at iLeft with value at iRight.
       3. return array
    */
-  
+
+  sort(elements, low = undefined, high = undefined){
+    let pivotIndex;
+    if(low === undefined){
+      low = 0;
+    }
+
+    if( high === undefined){
+      high = elements.length - 1;
+    }
+
+    if(low < high){
+      pivotIndex = this.partition(elements, low, high);
+
+      this.sort(elements, low, pivotIndex - 1);
+      this.sort(elements, pivotIndex + 1, high);
+    }
+    return elements;
+  }
+
 }
