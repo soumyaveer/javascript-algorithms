@@ -73,6 +73,31 @@ class Set{
     }
     return false;
   }
+
+  /* union(): returns the new set object with all the elements of set A and set B
+    1. create a new set - unionAB
+    2. initialize new array values and store values of setA in it.
+    3. loop through the array
+      3.1 add the values of array to unionAB
+    4. repeat steps 2, 3 for setB
+    5. return unionAB
+   */
+
+  union(setB){
+    let unionSet = new Set();
+
+    let values = this.values();
+    values.forEach((value) =>{
+      unionSet.add(value);
+    });
+
+    values = setB.values();
+    values.forEach((value) => {
+      unionSet.add(value);
+    });
+
+    return unionSet;
+  }
 }
 
 module.exports = Set;
