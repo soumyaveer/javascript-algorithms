@@ -7,6 +7,9 @@ class Set{
     this.items = {};
   }
 
+  /* has: returns true is the value is present in the set. otherwise false.
+  Time Complexity: F(n) = O(1)
+   */
   has(value){
     return this.items.hasOwnProperty(value);
   }
@@ -15,6 +18,8 @@ class Set{
     1. check if the value is already present in the set.
        1.1 if no, add value to the set and return true
     2. return false
+    
+    Time Complexity: F(n) = O(1)
    */
   add(value){
     if(!this.has(value)){
@@ -29,11 +34,13 @@ class Set{
     2. loop through each key in set
        2.1 increment count by 1
     3. return count
+
+    Time Complexity: F(n) = O(n)
   */
   size(){
     let count = 0;
 
-    for(let key in this.items){
+    for(let key in this.items){ //O(n)
       ++count;
     }
     return count;
@@ -44,18 +51,22 @@ class Set{
     2. loop through the set
       2.1 push value of set to array
     3. return array
+
+    Time Complexity: F(n) = O(n)
    */
   values(){
     let values = [];
 
-    for(let key in this.items){
+    for(let key in this.items){     //O(n)
       values.push(this.items[key]);
     }
 
     return values;
   }
 
-  //clear(): removes all elements from the set
+  /*clear(): removes all elements from the set
+    Time Complexity: F(n) = O(1)
+   */
   clear(){
     this.items = {};
   }
@@ -65,6 +76,8 @@ class Set{
        1.1 if yes, delete the value from the set
        1.2 return true
      2. return false, if the value was not found or the above condition failed.
+
+     Time Complexity: F(n) = O(1)
    */
   delete(value){
     if(this.has(value)){
