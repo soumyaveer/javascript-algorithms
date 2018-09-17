@@ -7,6 +7,7 @@ class QuickSort{
         2.1 call method partition(array, low, high) and save the pivot index returned
         2.2 recursively call sort from low to pivotIndex - 1
         2.3 recursively call sort from pivotIndex + 1 to high
+     3. for initial call return sorted array
 
     partition(array, low, high)
       1. choose a pivot. We are taking the last element in the array. i.e, high
@@ -24,8 +25,7 @@ class QuickSort{
       3. return array
    */
 
-  sort(elements, low = undefined, high = undefined){
-    let pivotIndex;
+  sort(elements, low, high){
     if(low === undefined){
       low = 0;
     }
@@ -35,26 +35,29 @@ class QuickSort{
     }
 
     if(low < high){
-      pivotIndex = this.partition(elements, low, high);
+      let pivotIndex = this.partition(elements, low, high);
 
       this.sort(elements, low, pivotIndex - 1);
       this.sort(elements, pivotIndex + 1, high);
     }
-    return elements;
+
+    if((high - low) === (elements.length - 1)){
+      return elements;
+    }
   }
 
   partition(elements, low, high){
-    let pivot = high;
+    let pivot = elements[high];
     let pivotLocation = low;
 
-    for(let i = low; i <= high; i++){
+    for(let i = low; i < high; i++){
       if(elements[i] <= pivot){
         this.swap(elements, pivotLocation, i);
         pivotLocation++;
       }
     }
     this.swap(elements, pivotLocation, high);
-    return elements;
+    return pivotLocation;
   }
 
   swap(array, iLeft, iRight){
