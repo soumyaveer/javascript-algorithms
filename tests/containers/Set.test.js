@@ -119,3 +119,20 @@ describe('clear', () => {
     expect(set.values()).toMatchObject([]);
   });
 });
+
+describe('size', () => {
+  test('returns the length of set, when it is an empty set', () =>{
+    let set = new Set();
+
+    expect(set.size()).toBe(0);
+  });
+
+  test('returns the length of set, when set has elements', () =>{
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+  });
+});
