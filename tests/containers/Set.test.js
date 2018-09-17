@@ -226,3 +226,50 @@ describe('intersection', () =>{
     expect(intersectionAB.values()).toMatchObject([]);
   });
 });
+
+describe('difference', () => {
+  test('returns the difference between two sets', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(2);
+    setB.add(3);
+    setB.add(4);
+
+    let setDifference = setA.difference(setB);
+    expect(setDifference.values()).toMatchObject([1])
+  });
+
+  test('returns the difference between two sets, when both sets have no common element', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(4);
+    setB.add(5);
+    setB.add(6);
+
+    let setDifference = setA.difference(setB);
+    expect(setDifference.values()).toMatchObject([1, 2, 3])
+  });
+
+  test('returns the difference between two sets, when both sets have common element', () => {
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+
+    let setB = new Set();
+    setB.add(1);
+    setB.add(2);
+    setB.add(3);
+
+    let setDifference = setA.difference(setB);
+    expect(setDifference.values()).toMatchObject([])
+  });
+});
