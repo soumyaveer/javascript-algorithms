@@ -276,28 +276,28 @@ describe('difference', () => {
 
 describe('subset', () => {
   test('return true is one set is a subset of another set', () => {
-    let setA = new Set();
-    setA.add(1);
-    setA.add(2);
-    setA.add(3);
-
     let setB = new Set();
+    setB.add(1);
     setB.add(2);
     setB.add(3);
 
-    expect(setA.subset(setB)).toBe(true);
+    let setA = new Set();
+    setA.add(2);
+    setA.add(3);
+
+    expect(setA.subsetOf(setB)).toBe(true);
   });
 
   test('return false is one set is not a subset of another set', () => {
     let setA = new Set();
-    setA.add(1);
-    setA.add(2);
-    setA.add(3);
+    setA.add(4);
+    setA.add(5);
 
     let setB = new Set();
-    setB.add(4);
-    setB.add(5);
+    setB.add(1);
+    setB.add(2);
+    setB.add(3);
 
-    expect(setA.subset(setB)).toBe(false);
+    expect(setA.subsetOf(setB)).toBe(false);
   });
 });

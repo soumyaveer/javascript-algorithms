@@ -141,6 +141,32 @@ class Set{
 
     return differenceSet;
   }
+
+  /* subset: returns true is one set is a subset of another set.
+    1. check if the size of setA is greater than size of subsetB
+        1.1 if true, return false
+    2. else,
+      2.1 initialize values array and store the values of setA
+      2.2 loop through the values array
+          2.2.1 check if otherSet does not have value
+                2.2.1.1 if true, return false
+    3. return true
+   */
+
+  subsetOf(otherSet){
+    if(this.size() > otherSet.size()){
+      return false;
+    } else {
+      let values = this.values();
+
+      for(let i = 0; i < values.length; i++){
+        if(!otherSet.has(values[i])){
+          return false;
+        }
+      }
+      return true;
+    }
+  }
 }
 
 module.exports = Set;
