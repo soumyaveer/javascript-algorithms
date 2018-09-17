@@ -14,7 +14,7 @@ class SequentialSearch{
   search(searchKey){
     let length = this.elements.length;
 
-    for(let i = 0; i < length; i++){
+    for(let i = 0; i < length; i++){       //O(n)
       if(this.elements[i] === searchKey){
         return true;
       }
@@ -24,3 +24,7 @@ class SequentialSearch{
 }
 
 module.exports = SequentialSearch;
+
+/* Time Complexity: Worst case
+    F(n) = O(n)
+ */
