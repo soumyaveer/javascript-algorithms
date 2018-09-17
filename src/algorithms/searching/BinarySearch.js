@@ -31,7 +31,7 @@ class BinarySearch{
       } else if(midElement > searchKey){
         highIndex = midIndex - 1;
       } else {
-        return true
+        return true;
       }
     }
     return false;
