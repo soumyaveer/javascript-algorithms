@@ -3,7 +3,13 @@
  */
 
 class Set{
+  constructor(){
+    this.items = {};
+  }
 
+  has(value){
+    return value in this.items;
+  }
 }
 
 module.exports = Set;
