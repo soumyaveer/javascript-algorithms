@@ -22,3 +22,51 @@ describe('add', () => {
     expect(set.values()).toMatchObject(["1", "2", "3"]);
   });
 });
+
+describe('delete', () => {
+  test('removes the value from the beginning of the set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+
+    set.remove(1);
+
+    expect(set.size()).toBe(2);
+    expect(set.values()).toMatchObject(['2', '3']);
+  });
+
+  test('removes the value from the middle of the set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+
+    set.remove(2);
+
+    expect(set.size()).toBe(2);
+    expect(set.values()).toMatchObject(['1', '3']);
+  });
+
+
+  test('removes the value from the last position of the set', () => {
+    let set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+
+    expect(set.size()).toBe(3);
+    expect(set.values()).toMatchObject(['1', '2', '3']);
+
+    set.remove(3);
+
+    expect(set.size()).toBe(2);
+    expect(set.values()).toMatchObject(['1', '2']);
+  });
+});
