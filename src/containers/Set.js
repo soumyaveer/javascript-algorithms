@@ -23,6 +23,21 @@ class Set{
     }
     return false;
   }
+
+  /* size: returns the length of set
+    1. initialize count.
+    2. loop through each key in set
+       2.1 increment count by 1
+    3. return count
+  */
+  size(){
+    let count = 0;
+
+    for(let key in this.items){
+      ++count;
+    }
+    return count;
+  }
 }
 
 module.exports = Set;
