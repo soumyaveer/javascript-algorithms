@@ -56,4 +56,16 @@ class QuickSort{
     this.swap(elements, pivotLocation, high);
     return elements;
   }
+
+  swap(array, iLeft, iRight){
+    if(iLeft === iRight){
+      return;
+    }
+
+    let temp = array[iLeft];
+    array[iLeft] = array[iRight];
+    array[iRight] = temp;
+
+    return array;
+  }
 }
