@@ -19,6 +19,15 @@ class HashTable{
     }
     return hash;
   }
+
+  /* set: adds a new item to the hash table
+     1. find the position of the key to store value using hashCode method. Store it to position variable.
+     2. store the value in that position.
+   */
+  set(key, value){
+    let position = this.hashCode(key);
+    this.table[position] = value;
+  }
 }
 
 module.exports = HashTable;
