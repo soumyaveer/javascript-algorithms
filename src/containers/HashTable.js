@@ -23,9 +23,12 @@ class HashTable{
   /* set: adds a new item to the hash table
      1. find the position of the key to store value using hashCode method. Store it to position variable.
      2. store the value in that position.
-   */
+
+     Time Complexity: F(n) = O(n).
+     This is because set() is using hashCode method to calculate it’s position whose time complexity is O(n), which is the highest in set() method,
+  */
   set(key, value){
-    let position = this.hashCode(key);
+    let position = this.hashCode(key);  //O(n)
     this.table[position] = value;
   }
 }
