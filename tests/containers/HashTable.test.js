@@ -27,3 +27,20 @@ describe('get', () => {
     expect(hash.get('Frodo')).toBe('frodo_baggins@shire.com');
   });
 });
+
+describe('remove', () => {
+  test('removes the value from the hash table using key', () => {
+    let hash = new HashTable();
+
+    hash.set('Gandalf', 'gandalf@email.com');
+    hash.set('Legolas', 'legolas@elf.com');
+    hash.set('Aragorn', 'strider@gondor.com');
+    hash.set('Frodo', 'frodo_baggins@shire.com');
+
+    expect(hash.get('Legolas')).toBe('legolas@elf.com');
+
+    hash.remove('Legolas');
+
+    expect(hash.get('Legolas')).toBe(undefined);
+  });
+});
