@@ -43,6 +43,14 @@ class HashTable{
     let position = this.hashCode(key);
     return this.table[position];
   }
+
+  /* remove: removes the value from the hash table using key
+    1. get the position of the key using hasCode method and store it in position variable.
+    2. remove the value at that position by overwriting it with undefined.
+
+    Time Complexity: F(n) = O(n)
+    This is because remove() is using hashCode method to calculate the position of the key. hashCode's time complexity is O(n), which is the highest in remove() method.
+   */
 }
 
 module.exports = HashTable;
