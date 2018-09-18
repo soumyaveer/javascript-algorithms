@@ -35,6 +35,8 @@ class Kruskals{
       1.3 If edges are not same, add it to MST
       1.4 Remove duplicate edges
    2. return MST
+
+   TODO: Fix algorithm
    */
 
   findMST(){
