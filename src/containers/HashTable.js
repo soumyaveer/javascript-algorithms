@@ -40,7 +40,7 @@ class HashTable{
     This is because get() is using hashCode method to calculate it’s position whose time complexity is O(n), which is the highest in get() method.
    */
   get(key){
-    let position = this.hashCode(key);
+    let position = this.hashCode(key); //O(n)
     return this.table[position];
   }
 
@@ -51,6 +51,10 @@ class HashTable{
     Time Complexity: F(n) = O(n)
     This is because remove() is using hashCode method to calculate the position of the key. hashCode's time complexity is O(n), which is the highest in remove() method.
    */
+  remove(key){
+    let position = this.hashCode(key); //O(n)
+    this.table[position] = undefined;
+  }
 }
 
 module.exports = HashTable;
