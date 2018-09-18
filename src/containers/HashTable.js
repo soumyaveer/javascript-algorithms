@@ -25,11 +25,23 @@ class HashTable{
      2. store the value in that position.
 
      Time Complexity: F(n) = O(n).
-     This is because set() is using hashCode method to calculate it’s position whose time complexity is O(n), which is the highest in set() method,
+     This is because set() is using hashCode method to calculate it’s position whose time complexity is O(n), which is the highest in set() method.
   */
   set(key, value){
     let position = this.hashCode(key);  //O(n)
     this.table[position] = value;
+  }
+
+  /* get: returns the value from the hash table using key
+    1. get the position of the key using hashCode method
+    2. return the value at that position.
+
+    Time Complexity: F(n) = O(n).
+    This is because get() is using hashCode method to calculate it’s position whose time complexity is O(n), which is the highest in get() method.
+   */
+  get(key){
+    let position = this.hashCode(key);
+    return this.table[position];
   }
 }
 
