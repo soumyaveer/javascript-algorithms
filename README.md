@@ -1,6 +1,10 @@
 [![Build Status](https://circleci.com/gh/soumyaveer/javascript-algorithms.svg?style=svg)](https://circleci.com/gh/soumyaveer/javascript-algorithms)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/10948236/50503457-fb6b0380-0a1b-11e9-8cb5-3c3589bf0735.png">
+</p>
+
 ### Search
 
 * [Sequential Search](https://github.com/soumyaveer/javascript-algorithms/blob/master/src/algorithms/searching/SequentialSearch.js)
@@ -33,6 +37,7 @@
 * [Kruskal's algorithm](https://github.com/soumyaveer/javascript-algorithms/blob/master/src/algorithms/graphs/Kruskals.js)
 * [Prim's algorithm](https://github.com/soumyaveer/javascript-algorithms/blob/master/src/algorithms/graphs/Prims.js)
 
+---
 
 ### Developing
 
